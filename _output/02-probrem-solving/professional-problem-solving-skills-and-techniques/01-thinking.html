@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>データ分析情報まとめ – thinking</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../_styles/style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">データ分析情報まとめ</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-kaggle/index.html" class="sidebar-item-text sidebar-link">Kaggle</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">EDA</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-EDA/R-for-data-science.html" class="sidebar-item-text sidebar-link">R for Data Science Exploratory Data Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Seriation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-EDA/seriation/seriation.html" class="sidebar-item-text sidebar-link">Seriation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">モデリング</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../05-modeling/all-analytical-models/index.html" class="sidebar-item-text sidebar-link">分析モデル入門</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-modeling/all-analytical-models/part1.html" class="sidebar-item-text sidebar-link">第1部 定型データの扱い</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">問題解決</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/index.html" class="sidebar-item-text sidebar-link">問題解決プロフェッショナル 「思考と技術」</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/00-preface.html" class="sidebar-item-text sidebar-link">序文</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/01-thinking.html" class="sidebar-item-text sidebar-link active">第1章 思考編</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/02-thechniques.html" class="sidebar-item-text sidebar-link">第2章 技術編</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">機械学習</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-machine-learning/LightGBM/index.html" class="sidebar-item-text sidebar-link">LightGBM</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">scikit-learn</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-machine-learning/sklearn/utils.html" class="sidebar-item-text sidebar-link">便利な関数</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">統計学</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/causal-inference/index.html" class="sidebar-item-text sidebar-link">因果推論</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/mathematical-statistics/index.html" class="sidebar-item-text sidebar-link">数理統計学</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">回帰分析</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/regression-analysis/heteroskedasticity.html" class="sidebar-item-text sidebar-link">不均一分散</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#第1章-思考編" id="toc-第1章-思考編" class="nav-link active" data-scroll-target="#第1章-思考編">第1章 思考編</a>
+  <ul class="collapse">
+  <li><a href="#既成の枠を取り外す" id="toc-既成の枠を取り外す" class="nav-link" data-scroll-target="#既成の枠を取り外す">1 &lt;ゼロベース思考&gt; — 「既成の枠」を取り外す —</a>
+  <ul class="collapse">
+  <li><a href="#自分の狭い枠の中で否定に走らない" id="toc-自分の狭い枠の中で否定に走らない" class="nav-link" data-scroll-target="#自分の狭い枠の中で否定に走らない">1. 自分の狭い枠の中で否定に走らない</a></li>
+  <li><a href="#顧客にとっての価値を考える" id="toc-顧客にとっての価値を考える" class="nav-link" data-scroll-target="#顧客にとっての価値を考える">2. 顧客にとっての価値を考える</a></li>
+  <li><a href="#時代がを求めている" id="toc-時代がを求めている" class="nav-link" data-scroll-target="#時代がを求めている">3. 時代が&lt;ゼロベース思考&gt;を求めている</a></li>
+  </ul></li>
+  <li><a href="#常にその時点での結論を持ってアクションを起こす" id="toc-常にその時点での結論を持ってアクションを起こす" class="nav-link" data-scroll-target="#常にその時点での結論を持ってアクションを起こす">2 &lt;仮説思考&gt; — 常にその時点での結論を持ってアクションを起こす —</a>
+  <ul class="collapse">
+  <li><a href="#アクションに結び付く議論を常に持つ" id="toc-アクションに結び付く議論を常に持つ" class="nav-link" data-scroll-target="#アクションに結び付く議論を常に持つ">1 アクションに結び付く議論を常に持つ</a></li>
+  <li><a href="#結論に導く背後の理由やメカニズムを考える" id="toc-結論に導く背後の理由やメカニズムを考える" class="nav-link" data-scroll-target="#結論に導く背後の理由やメカニズムを考える">2 結論に導く背後の理由やメカニズムを考える</a></li>
+  <li><a href="#ベストを考えるよりもベターを実行する" id="toc-ベストを考えるよりもベターを実行する" class="nav-link" data-scroll-target="#ベストを考えるよりもベターを実行する">3 「ベスト」を考えるよりも「ベター」を実行する</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="第1章-思考編" class="level1">
+<h1>第1章 思考編</h1>
+<ul>
+<li>ゼロベース思考
+<ul>
+<li>ゼロベースで物事を考える=「既成の枠」を取り外す</li>
+</ul></li>
+<li>仮説思考
+<ul>
+<li>常にその時点での結論を持ってアクションを起こす</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-1-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">graph LR
+A[わかること] -- 大きな溝 --&gt; B[実行できること] -- 大きな溝 --&gt; C[結果がうまくいくこと]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">図&nbsp;1: ビジネスでは、結果がうまくいかなければバリューはない。</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>ビジネスを成功に導く = 「結果がうまくいく」ための思考がゼロベース思考と仮説思考</p>
+<section id="既成の枠を取り外す" class="level2">
+<h2 class="anchored" data-anchor-id="既成の枠を取り外す">1 &lt;ゼロベース思考&gt; — 「既成の枠」を取り外す —</h2>
+<div class="message">
+<p>&lt;ゼロベース思考&gt;の2つのポイント</p>
+</div>
+<ul>
+<li>自分の狭い枠の中で否定に走らない</li>
+<li>顧客にとっての価値を考える</li>
+</ul>
+<section id="自分の狭い枠の中で否定に走らない" class="level3">
+<h3 class="anchored" data-anchor-id="自分の狭い枠の中で否定に走らない">1. 自分の狭い枠の中で否定に走らない</h3>
+<div class="message">
+<p>&lt;ゼロベース思考&gt;の妨げになるのは「既成の枠」<br>
+「この課題を解決するための具体策はある」という前提でゼロベースから考える</p>
+</div>
+<ul>
+<li>既存の枠で考える従来どおりの思考
+<ul>
+<li>枠の外にある解決策を見落とす</li>
+<li>枠の中の否定的要素を列挙してしまう</li>
+</ul></li>
+<li>ゼロベース思考
+<ul>
+<li>自分の狭い枠を超えて考える</li>
+<li>解決策を見出す可能性が高まる</li>
+</ul></li>
+</ul>
+</section>
+<section id="顧客にとっての価値を考える" class="level3">
+<h3 class="anchored" data-anchor-id="顧客にとっての価値を考える">2. 顧客にとっての価値を考える</h3>
+<div class="message">
+<p>自分の立場だけで問題をとらえるのではなく、 「顧客にとっての価値」を考え、実行に移すことが大事</p>
+</div>
+<ul>
+<li>自分の立場だけで問題をとらえると「既成の枠」から抜け出せない</li>
+<li>多くの創業者がビジネスを立ち上げることに成功した理由は、自身が開発者であるとどう似にユーザーでもあったから
+<ul>
+<li>このため、「顧客にとっての価値」を考え、貫くことができた</li>
+</ul></li>
+<li>大企業になると「顧客にとっての価値」を考え、貫くことができない
+<ul>
+<li>規模の拡大により消費者との距離が遠くなるため</li>
+</ul></li>
+</ul>
+<section id="事例1-消費者の行動変化を加速させる決断" class="level4">
+<h4 class="anchored" data-anchor-id="事例1-消費者の行動変化を加速させる決断">事例1 — 消費者の行動変化を加速させる決断</h4>
+<div class="message">
+<p>ZARAは&lt;ゼロベース思考&gt;を徹底することで、業界の常識を破り、成功した</p>
+</div>
+<ul>
+<li>競合他社との違い
+<ul>
+<li>徹底的な自前主義</li>
+<li>在庫切れを奨励。顧客の来店を促す</li>
+<li>承認の約半数を自社工場で製造。</li>
+</ul></li>
+<li>&lt;ゼロベース思考&gt;の徹底
+<ul>
+<li>ビジネスシステム全体を&lt;ゼロベース思考&gt;で構想</li>
+<li>構想通りのオペレーションを現場で徹底</li>
+<li>顧客と製造の間のコミュニケーションがスムーズかつスピーディ</li>
+</ul></li>
+</ul>
+<div class="message">
+<p>ドトールは&lt;ゼロベース思考&gt;を用いてコーヒー外飲市場を切り開いた</p>
+</div>
+<ul>
+<li>ドトールの成功
+<ul>
+<li>低価格で美味しいコーヒーを提供</li>
+<li>1日数百人もの来店</li>
+</ul></li>
+<li>&lt;ゼロベース思考&gt;
+<ul>
+<li>「喫茶店に1日数百人も入らない」を取り払う
+<ul>
+<li>単価を低くすることを実現</li>
+</ul></li>
+<li>「1日に1000杯もフレッシュなコーヒーを瞬時に供給できない」を取り払う
+<ul>
+<li>海外の優れたコーヒーマシンを導入</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="事例2-技術革新を消費者の目でとらえる" class="level4">
+<h4 class="anchored" data-anchor-id="事例2-技術革新を消費者の目でとらえる">事例2 — 技術革新を消費者の目でとらえる</h4>
+<section id="シャープ" class="level5">
+<h5 class="anchored" data-anchor-id="シャープ">シャープ</h5>
+<ul>
+<li>液晶=電卓という枠組みを取り払い、液晶そのものをキーデバイス化</li>
+<li>「オンリーワンを積み重ねてナンバーワンになる」の基本姿勢</li>
+<li>「環境先進企業」としてのブランド形成</li>
+</ul>
+</section>
+<section id="ユニクロ東レ" class="level5">
+<h5 class="anchored" data-anchor-id="ユニクロ東レ">ユニクロ・東レ</h5>
+</section>
+</section>
+</section>
+<section id="時代がを求めている" class="level3">
+<h3 class="anchored" data-anchor-id="時代がを求めている">3. 時代が&lt;ゼロベース思考&gt;を求めている</h3>
+</section>
+</section>
+<section id="常にその時点での結論を持ってアクションを起こす" class="level2">
+<h2 class="anchored" data-anchor-id="常にその時点での結論を持ってアクションを起こす">2 &lt;仮説思考&gt; — 常にその時点での結論を持ってアクションを起こす —</h2>
+<div class="message">
+<p>&lt;仮説思考&gt;の3つのポイント</p>
+</div>
+<ul>
+<li>アクションに結び付く議論を常に持つ — 結論の仮説</li>
+<li>結論に導く背後の理由やメカニズムを考える — 理由の仮説</li>
+<li>「ベスト」を考えるよりも「ベター」を実行する — スピードを重視</li>
+</ul>
+<section id="アクションに結び付く議論を常に持つ" class="level3">
+<h3 class="anchored" data-anchor-id="アクションに結び付く議論を常に持つ">1 アクションに結び付く議論を常に持つ</h3>
+<div class="message">
+<p>なにがなんでも結論を出すことが仮説思考の始まり<br>
+ビジネスでは1つの具体的結論が100の評論に勝る</p>
+</div>
+<ul>
+<li>まず結論を出す</li>
+<li>出した結論に対して SO WHAT? (だから何なの) を繰り返す</li>
+<li>アクションに結び付く結論を出す</li>
+</ul>
+<p>最初は的を外していても、常にアクションに結び付く結論を持つをいうことを心がけると精度は上がる。</p>
+<section id="例1" class="level5">
+<h5 class="anchored" data-anchor-id="例1">例1</h5>
+<ul>
+<li>体重が増えた</li>
+<li>SO WHAT?
+<ul>
+<li>体重が増えて血圧も上がりやすくなった</li>
+<li>痩せないと健康によくない</li>
+<li>運動をする</li>
+<li>スポーツクラブへ週3回行く（具体的なアクションにつながる結論）</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="結論に導く背後の理由やメカニズムを考える" class="level3">
+<h3 class="anchored" data-anchor-id="結論に導く背後の理由やメカニズムを考える">2 結論に導く背後の理由やメカニズムを考える</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-2-2-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">graph TD
+A[背後のメカニズムの把握] -- メカニズムがわかればアクションに結び付く結論が出せる --&gt; B[アクションに結び付く結論を持つ]
+B -- アクションに結び付く結論を持てば背後のメカニズムを自然に考えられる --&gt; A
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">図&nbsp;2: 「背後のメカニズムの把握」と「アクションに結び付く結論を持つ」は鶏と卵の関係</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>背後のメカニズムを把握していれば
+<ul>
+<li>軌道修正が容易</li>
+<li>要と思われるものの裏をとれる</li>
+</ul></li>
+</ul>
+<section id="演習例1-家庭用殺虫剤への新規参入の結論を出す" class="level5 left-line">
+<h5 class="anchored" data-anchor-id="演習例1-家庭用殺虫剤への新規参入の結論を出す">演習例1 — 家庭用殺虫剤への新規参入の結論を出す</h5>
+<p>課題：「家庭用ゴキブリ殺虫剤の年間市場を10分以内に推定せよ」</p>
+<ul>
+<li>方法1: ゴキブリ殺虫剤の市場規模に関する調査資料を探索する
+<ul>
+<li>10分以内では困難</li>
+<li>成長が始まったばかりで市場データがない場合も困難</li>
+</ul></li>
+<li>方法2: 自分で市場規模を推定する
+<ul>
+<li>方法1が困難なときはこちらをせざるを得ない場合がある</li>
+</ul></li>
+</ul>
+<p>推定例:</p>
+<p>最も簡単な方法は 市場規模 = 1世帯あたりの年間利用金額 × カバー世帯数 によって推定する方法</p>
+<ul>
+<li>全国5000万世帯</li>
+<li>1世帯あたり年間2000円</li>
+<li><strong>最大 2000 円/世帯 × 5000万世帯 = 1000億円</strong></li>
+</ul>
+<p>全世帯が使用するのは現実的でない<br>
+ファミリー世帯が需要の中心として、ファミリー世帯が占める割合を推定する</p>
+<ul>
+<li>新聞などで発表される平均世帯数は3人</li>
+<li>4人家族か1人暮らしかに限定すると、3人 = 4人 × x% + 1人 × (100 - x)% を解いてファミリー世帯は約70%</li>
+<li>北の地域や新しいマンションでは使用しないとし、使用する世帯はファミリー世帯の半分とすると 70% × 50% = 35%</li>
+<li>全世帯の約3分の1の 1700世帯 が使用世帯となる</li>
+</ul>
+<p>年間使用金額を推定する</p>
+<ul>
+<li>エアゾールタイプは約500円、年間一本と仮定</li>
+<li>ベイト剤タイプは一個50円、6カ月使用、ひと月4個使用と仮定。 50円 × 4個 × 6カ月 = 1200円</li>
+<li>エアゾールとベイト剤を足して 1700円。約2000円</li>
+<li>世帯数と金額をかけ合わせて <strong>平均 2000 円/世帯 × 1700万世帯 = 340億円</strong></li>
+</ul>
+<p>現時点でのアクションに結び付く結論:<br>
+<strong>「家庭用ゴキブリ殺虫剤市場は340億円程度の成熟市場で成長の見込みが低く、新規参入を検討するほど市場に魅力がない」</strong></p>
+</section>
+<div class="message">
+<p>その時点での結論を出すこと自体が、後にさらに考えを深め、より良い解決策をだすことに結び付く</p>
+</div>
+<ul>
+<li>もし根拠が希薄で不安のあるすうじがあれば、そこだけを検証すれば格段に精度が上がるはず</li>
+<li>メカニズムに関する仮説が納得のいくものであるが、実際の数字より多い額が出てしまったとき
+<ul>
+<li>仮説が間違っているかもしれない</li>
+<li>市場が発展途上の場合は、ポテンシャル市場の額を表しており、企業が十分に市場をカバーしていないとも考えられる</li>
+</ul></li>
+</ul>
+<section id="演習例2-自転車市場への新規参入の結論を出す" class="level5 left-line">
+<h5 class="anchored" data-anchor-id="演習例2-自転車市場への新規参入の結論を出す">演習例2 — 自転車市場への新規参入の結論を出す</h5>
+<p>課題: 「日本国内における自転車の年間市場を推定し、新規参入の是非に関する結論を出しなさい」</p>
+<p>推定例:</p>
+<p>自転車に乗る人は小学生から60歳までと仮定。 平均寿命80歳、各年齢の人口が同じ数だとすると、自転車に乗る人は大体 50/80 くらい。 全人口が1億3000万人。 1人1台とする。</p>
+<p>1億3000万人 × 5/8 = 8125万人</p>
+<p>6年に1回買い替えると予想</p>
+<p>市場規模 8125万人 × 1回/6年 = 1350万台</p>
+<p>平均価格を1万5000円とすると</p>
+<p>1.5万円 × 1350万台 = 2025億円</p>
+<p>現時点での結論:</p>
+<p><strong>「自転車市場は市場性を評価すると新規参入を検討する価値は十分にある。それに当たっては電動アシスト自転車の普及版も視野に入れた市場を考えるべきである」</strong></p>
+<p>別の推定例:</p>
+<p>年代別の購入・買い替え頻度</p>
+<ul>
+<li>幼稚園児から小学生(3~12歳): 3年で買い替え</li>
+<li>中学生から大学生(13~22歳): 5年買い替え</li>
+<li>社会人(23~60歳): 10年で買い替え</li>
+<li>高齢者(61~80歳): 買い替えをしない</li>
+</ul>
+<p>年代別の人口分布が均一、平均寿命を80歳とする。 それぞれの年代の人数に1年以内に購入する確率をかけたものを足し上げる</p>
+<p>{ (10 × 1/3 ) + ( 10 × 1/5 ) + (38 × 1/10) + (20 × 0) } × ( 1億3000万 ÷ 80 ) = 1480万台</p>
+<p>市場規模 1.5万円 × 1480万台 = 2220億円</p>
+<p>現時点での結論:</p>
+<p><strong>「自転車市場は市場性を評価すると新規参入を検討する価値は十分にある。自転車市場を細分化し、高付加価値セグメンテーションをメインターゲットに市場参入すべきである」</strong></p>
+</section>
+<ul>
+<li>推定した数字が違っていることがわかっても、そこの数字だけを調べて計算しなおす
+<ul>
+<li>ゼロから調べるよりも効率的</li>
+</ul></li>
+<li>一応出した結論に基づいてアクションプランを立て、同時に裏を取ることができる（分析とアクションの同時並行）</li>
+</ul>
+</section>
+<section id="ベストを考えるよりもベターを実行する" class="level3">
+<h3 class="anchored" data-anchor-id="ベストを考えるよりもベターを実行する">3 「ベスト」を考えるよりも「ベター」を実行する</h3>
+<div class="message">
+<p>実行することにより、今よりもベターな状況が想定されれば、とにかく実行に移す</p>
+</div>
+<ul>
+<li>ビジネスでは絶対的な正解はない</li>
+<li>ベターな解決策を見つけたらすぐに実行する</li>
+<li>どんどん軌道修正していく</li>
+</ul>
+<div class="message">
+<p>ベターな解決策で現場を動かすほうが効率的</p>
+</div>
+<ul>
+<li>ベターな解決策でも現場を動かし始めると精度の高いすぐ役立つ情報が自動的に入ってくる</li>
+<li>ベターな解決策が見えたらすぐに実行に移し、試行錯誤を重ねる</li>
+<li>ベストは最後に見えてくる</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-3">graph LR
+subgraph 最初の段階
+    A1[現時点での結論] --&gt; B1[検証]
+    B1 --&gt; C1[実行]
+end
+subgraph 次の段階
+    A2[現時点での結論] --&gt; B2[検証]
+    B2 --&gt; C2[実行]
+end
+subgraph その次の段階
+    A3[現時点での結論] --&gt; B3[検証]
+    B3 --&gt; C3[実行]
+end
+
+C1 --&gt; A2 
+C2 --&gt; A3 
+C3 --&gt; D[究極の解]
+</pre>
+<div id="mermaid-tooltip-3" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<section id="情報収集に時間を使いすぎない" class="level4">
+<h4 class="anchored" data-anchor-id="情報収集に時間を使いすぎない">情報収集に時間を使いすぎない</h4>
+<ul>
+<li>ビジネスの現場では、時間と環境の変化にしたがって解決策が変化していく</li>
+<li>6割レベルの情報が集まったら一度方向性の判断を行う</li>
+</ul>
+<div class="message">
+<p>初めにアクションに結び付く結論を言い、その結論に導く理由を説明する</p>
+</div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "コピーしました");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "コピーしました");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

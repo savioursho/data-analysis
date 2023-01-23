@@ -1,0 +1,13 @@
+.outline {
+    border-left: 1px solid;
+    padding-left: 10px;
+}
+
+.proof {
+    border-left: 1px dashed;
+    padding-left: 10px;
+}
+
+.proof-title {
+    font-weight: bold;
+}

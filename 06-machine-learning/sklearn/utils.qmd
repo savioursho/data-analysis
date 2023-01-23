@@ -1,0 +1,5 @@
+# 便利な関数
+
+- `check_cv`
+- `_safe_indexing`
+- `Bunch`

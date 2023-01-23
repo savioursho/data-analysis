@@ -1,0 +1,62 @@
+% 参考にしたサイト
+% https://mathlandscape.com/latex-amsthm/
+% https://qiita.com/rityo_masu/items/5ef248024b294d72799a
+% https://note.com/dragon_notepad/n/ne2a1392cf8ce
+% https://lualatexlab.blog.fc2.com/blog-entry-43.html
+% https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74
+
+\documentclass[]{ltjsarticle}
+
+% 図
+\usepackage{graphicx}
+
+% 箇条書き
+\usepackage{outlines}
+
+% 数学系パッケージ
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{physics}
+
+% 圏点
+\usepackage{pxrubrica}
+
+% コメント
+\usepackage{comment}
+
+% 定理環境
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+% hyperref
+% これは最後に置く
+\usepackage{bookmark}
+\usepackage{cleveref}
+\hypersetup{
+  unicode,
+  bookmarksnumbered=true,
+  hidelinks,
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=red,
+  }
+
+% \usepackage{cleveref}より後に書く  
+\newtcbtheorem[number within = section, crefname={定理}{定理}]{thm}{定理}{breakable = true}{thm}
+\newtcbtheorem[number within = section, crefname={定義}{定義}]{dfn}{定義}{breakable = true, colframe=blue}{dfn}
+\newtcbtheorem[crefname={分布}{分布}]{dist}{分布}{breakable = true, colframe=blue}{dist}
+\newtcbtheorem[number within = section, crefname={例}{例}]{exm}{例}{breakable = true}{exm}
+
+
+\crefname{equation}{式}{式}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{figure}{図}{図}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{table}{表}{表}% {環境名}{単数形}{複数形} \crefで引くときの表示
+
+\crefname{section}{第}{第}
+\creflabelformat{section}{#2#1章#3}
+\crefname{subsection}{第}{第}
+\creflabelformat{subsection}{#2#1節#3}
+
+\numberwithin{equation}{section}

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>データ分析情報まとめ - 数理統計学</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索"
+  }
+}</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../_styles/style.css">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">データ分析情報まとめ</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">数理統計学</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../04-kaggle/index.html" class="sidebar-item-text sidebar-link">Kaggle</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">EDA</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-EDA/R-for-data-science.html" class="sidebar-item-text sidebar-link">R for Data Science Exploratory Data Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Seriation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../01-EDA/seriation/seriation.html" class="sidebar-item-text sidebar-link">Seriation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">モデリング</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../05-modeling/all-analytical-models/index.html" class="sidebar-item-text sidebar-link">分析モデル入門</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../05-modeling/all-analytical-models/part1.html" class="sidebar-item-text sidebar-link">第1部 定型データの扱い</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">問題解決</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/index.html" class="sidebar-item-text sidebar-link">問題解決プロフェッショナル 「思考と技術」</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/00-preface.html" class="sidebar-item-text sidebar-link">序文</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/01-thinking.html" class="sidebar-item-text sidebar-link">第1章 思考編</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../02-probrem-solving/professional-problem-solving-skills-and-techniques/02-thechniques.html" class="sidebar-item-text sidebar-link">第2章 技術編</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">機械学習</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-machine-learning/LightGBM/index.html" class="sidebar-item-text sidebar-link">LightGBM</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">scikit-learn</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../06-machine-learning/sklearn/utils.html" class="sidebar-item-text sidebar-link">便利な関数</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">統計学</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/causal-inference/index.html" class="sidebar-item-text sidebar-link">因果推論</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/mathematical-statistics/index.html" class="sidebar-item-text sidebar-link active">数理統計学</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">回帰分析</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../03-statistics/regression-analysis/heteroskedasticity.html" class="sidebar-item-text sidebar-link">不均一分散</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#分布概要" id="toc-分布概要" class="nav-link active" data-scroll-target="#分布概要"><span class="toc-section-number">1</span>  分布概要</a>
+  <ul class="collapse">
+  <li><a href="#離散型分布" id="toc-離散型分布" class="nav-link" data-scroll-target="#離散型分布">— 離散型分布 —</a></li>
+  <li><a href="#項分布" id="toc-項分布" class="nav-link" data-scroll-target="#項分布"><span class="toc-section-number">1.1</span>  2項分布</a></li>
+  <li><a href="#ポアソン分布" id="toc-ポアソン分布" class="nav-link" data-scroll-target="#ポアソン分布"><span class="toc-section-number">1.2</span>  ポアソン分布</a></li>
+  <li><a href="#幾何分布" id="toc-幾何分布" class="nav-link" data-scroll-target="#幾何分布"><span class="toc-section-number">1.3</span>  幾何分布</a></li>
+  <li><a href="#負の2項分布" id="toc-負の2項分布" class="nav-link" data-scroll-target="#負の2項分布"><span class="toc-section-number">1.4</span>  負の2項分布</a></li>
+  <li><a href="#超幾何分布" id="toc-超幾何分布" class="nav-link" data-scroll-target="#超幾何分布"><span class="toc-section-number">1.5</span>  超幾何分布</a></li>
+  <li><a href="#多項分布" id="toc-多項分布" class="nav-link" data-scroll-target="#多項分布"><span class="toc-section-number">1.6</span>  多項分布</a></li>
+  <li><a href="#連続型分布" id="toc-連続型分布" class="nav-link" data-scroll-target="#連続型分布">— 連続型分布 —</a></li>
+  <li><a href="#正規分布" id="toc-正規分布" class="nav-link" data-scroll-target="#正規分布"><span class="toc-section-number">1.7</span>  正規分布</a></li>
+  <li><a href="#多変量正規分布" id="toc-多変量正規分布" class="nav-link" data-scroll-target="#多変量正規分布"><span class="toc-section-number">1.8</span>  多変量正規分布</a></li>
+  <li><a href="#カイ2乗分布" id="toc-カイ2乗分布" class="nav-link" data-scroll-target="#カイ2乗分布"><span class="toc-section-number">1.9</span>  カイ2乗分布</a></li>
+  <li><a href="#f-分布" id="toc-f-分布" class="nav-link" data-scroll-target="#f-分布"><span class="toc-section-number">1.10</span>  <span class="math inline">\(F\)</span> 分布</a></li>
+  <li><a href="#t-分布" id="toc-t-分布" class="nav-link" data-scroll-target="#t-分布"><span class="toc-section-number">1.11</span>  <span class="math inline">\(t\)</span> 分布</a></li>
+  <li><a href="#指数分布" id="toc-指数分布" class="nav-link" data-scroll-target="#指数分布"><span class="toc-section-number">1.12</span>  指数分布</a></li>
+  <li><a href="#ガンマ分布" id="toc-ガンマ分布" class="nav-link" data-scroll-target="#ガンマ分布"><span class="toc-section-number">1.13</span>  ガンマ分布</a></li>
+  <li><a href="#ベータ分布" id="toc-ベータ分布" class="nav-link" data-scroll-target="#ベータ分布"><span class="toc-section-number">1.14</span>  ベータ分布</a></li>
+  </ul></li>
+  <li><a href="#分布の間の関係" id="toc-分布の間の関係" class="nav-link" data-scroll-target="#分布の間の関係"><span class="toc-section-number">2</span>  分布の間の関係</a>
+  <ul class="collapse">
+  <li><a href="#ガンマ分布とカイ2乗分布" id="toc-ガンマ分布とカイ2乗分布" class="nav-link" data-scroll-target="#ガンマ分布とカイ2乗分布"><span class="toc-section-number">2.1</span>  ガンマ分布とカイ2乗分布</a></li>
+  <li><a href="#ガンマ分布と指数分布" id="toc-ガンマ分布と指数分布" class="nav-link" data-scroll-target="#ガンマ分布と指数分布"><span class="toc-section-number">2.2</span>  ガンマ分布と指数分布</a></li>
+  <li><a href="#ガンマ分布と負の二項分布" id="toc-ガンマ分布と負の二項分布" class="nav-link" data-scroll-target="#ガンマ分布と負の二項分布"><span class="toc-section-number">2.3</span>  ガンマ分布と負の二項分布</a></li>
+  <li><a href="#二項分布とポアソン分布" id="toc-二項分布とポアソン分布" class="nav-link" data-scroll-target="#二項分布とポアソン分布"><span class="toc-section-number">2.4</span>  二項分布とポアソン分布</a></li>
+  <li><a href="#指数分布とポアソン分布" id="toc-指数分布とポアソン分布" class="nav-link" data-scroll-target="#指数分布とポアソン分布"><span class="toc-section-number">2.5</span>  指数分布とポアソン分布</a></li>
+  <li><a href="#指数分布と幾何分布" id="toc-指数分布と幾何分布" class="nav-link" data-scroll-target="#指数分布と幾何分布"><span class="toc-section-number">2.6</span>  指数分布と幾何分布</a></li>
+  </ul></li>
+  <li><a href="#十分統計量" id="toc-十分統計量" class="nav-link" data-scroll-target="#十分統計量"><span class="toc-section-number">3</span>  十分統計量</a>
+  <ul class="collapse">
+  <li><a href="#概要" id="toc-概要" class="nav-link" data-scroll-target="#概要"><span class="toc-section-number">3.1</span>  概要</a></li>
+  <li><a href="#ポアソン分布-1" id="toc-ポアソン分布-1" class="nav-link" data-scroll-target="#ポアソン分布-1"><span class="toc-section-number">3.2</span>  ポアソン分布</a></li>
+  <li><a href="#正規分布-1" id="toc-正規分布-1" class="nav-link" data-scroll-target="#正規分布-1"><span class="toc-section-number">3.3</span>  正規分布</a></li>
+  <li><a href="#一様分布" id="toc-一様分布" class="nav-link" data-scroll-target="#一様分布"><span class="toc-section-number">3.4</span>  一様分布</a></li>
+  </ul></li>
+  <li><a href="#不偏推定量" id="toc-不偏推定量" class="nav-link" data-scroll-target="#不偏推定量"><span class="toc-section-number">4</span>  不偏推定量</a>
+  <ul class="collapse">
+  <li><a href="#概要-1" id="toc-概要-1" class="nav-link" data-scroll-target="#概要-1"><span class="toc-section-number">4.1</span>  概要</a></li>
+  </ul></li>
+  <li><a href="#最尤推定量" id="toc-最尤推定量" class="nav-link" data-scroll-target="#最尤推定量"><span class="toc-section-number">5</span>  最尤推定量</a>
+  <ul class="collapse">
+  <li><a href="#多項分布-1" id="toc-多項分布-1" class="nav-link" data-scroll-target="#多項分布-1"><span class="toc-section-number">5.1</span>  多項分布</a></li>
+  </ul></li>
+  <li><a href="#正規分布に関する検定" id="toc-正規分布に関する検定" class="nav-link" data-scroll-target="#正規分布に関する検定"><span class="toc-section-number">6</span>  正規分布に関する検定</a>
+  <ul class="collapse">
+  <li><a href="#sec:2samples_mean_test_unknown_variance" id="toc-sec:2samples_mean_test_unknown_variance" class="nav-link" data-scroll-target="#sec\:2samples_mean_test_unknown_variance"><span class="toc-section-number">6.1</span>  2標本の平均の検定（分散が未知の場合）</a></li>
+  <li><a href="#元配置分散分析" id="toc-元配置分散分析" class="nav-link" data-scroll-target="#元配置分散分析"><span class="toc-section-number">6.2</span>  1元配置分散分析</a></li>
+  </ul></li>
+  <li><a href="#デルタ法" id="toc-デルタ法" class="nav-link" data-scroll-target="#デルタ法"><span class="toc-section-number">7</span>  デルタ法</a></li>
+  <li><a href="#指数分布族" id="toc-指数分布族" class="nav-link" data-scroll-target="#指数分布族"><span class="toc-section-number">8</span>  指数分布族</a></li>
+  <li><a href="#生存時間解析" id="toc-生存時間解析" class="nav-link" data-scroll-target="#生存時間解析"><span class="toc-section-number">9</span>  生存時間解析</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">数理統計学</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="分布概要" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="分布概要"><span class="header-section-number">1</span> 分布概要</h2>
+<p><span class="math display">\[
+% physicsを使えるようにする
+\require{physics}
+\]</span></p>
+<section id="離散型分布" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="離散型分布">— 離散型分布 —</h3>
+</section>
+<section id="項分布" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="項分布"><span class="header-section-number">1.1</span> 2項分布</h3>
+<div class="outline">
+<ul>
+<li><p>表記: <span class="math inline">\(Bin(n, p)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>試行回数: <span class="math inline">\(n\)</span></li>
+<li>成功確率: <span class="math inline">\(p\)</span></li>
+</ul></li>
+<li><p>確率関数: <span class="math display">\[p (k) = \binom{n}{k} p^k (1-p)^{n-k}\]</span></p></li>
+<li><p>確率母関数: <span class="math display">\[G (s) = (1 + p (s - 1))^n\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[E \qty [ X] = np, \quad Var \qty [ X ] = np (1 - p)\]</span></p></li>
+<li><p>再生性:</p>
+<p><span class="math inline">\(X_1 \sim Bin(n_1, p), X_2 \sim Bin(n_2, p)\)</span> のとき、 <span class="math inline">\(Y = X_1 + X_2\)</span>は<span class="math inline">\(Bin(n_1 + n_2, p)\)</span>に従う。</p></li>
+</ul>
+</div>
+</section>
+<section id="ポアソン分布" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="ポアソン分布"><span class="header-section-number">1.2</span> ポアソン分布</h3>
+<div class="outline">
+<ul>
+<li><p>表記: <span class="math inline">\(Po(\lambda)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>平均: <span class="math inline">\(\lambda\)</span></li>
+</ul></li>
+<li><p>確率関数: <span class="math display">\[p (k) = \frac{\lambda^{k}}{k!} e^{-\lambda}\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[E \qty [ X] = \lambda , \quad Var \qty [ X ] = \lambda\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="幾何分布" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="幾何分布"><span class="header-section-number">1.3</span> 幾何分布</h3>
+<div class="outline">
+<ul>
+<li><p>意味:</p>
+<p>ベルヌーイ試行の成功確率を <span class="math inline">\(p\)</span> とし、 確率変数 <span class="math inline">\(X\)</span> を1回成功するまでの失敗の回数とする。 <span class="math inline">\(X\)</span> はパラメータ <span class="math inline">\(p\)</span> の幾何分布に従う。</p></li>
+<li><p>表記: <span class="math inline">\(Ge(p)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>成功確率: <span class="math inline">\(p\)</span></li>
+</ul></li>
+<li><p>確率関数: <span class="math display">\[p (k) =  p(1-p)^{k}\]</span></p></li>
+<li><p>確率母関数: <span class="math display">\[G (s) = \frac{p}{1 - qs} = \qty ( 1 - (s - 1) \frac{q}{p})^{-1}\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[E \qty [ X] = \frac{1 - p}{p}, \quad Var \qty [ X ] = \frac{1 - p}{p^2}\]</span></p></li>
+</ul>
+</div>
+<section id="無記憶性" class="level4" data-number="1.3.1">
+<h4 data-number="1.3.1" class="anchored" data-anchor-id="無記憶性"><span class="header-section-number">1.3.1</span> 無記憶性</h4>
+<p>幾何分布は無記憶性を持つ <span id="eq-geometric_distribution_memorylessness"><span class="math display">\[
+    P(X = x + x_0 | X \geq x_0) = P(X = x)
+\tag{1}\]</span></span></p>
+<div class="proof">
+<p><span class="proof-title"><em>証明</em> (無記憶性を持つことの証明). </span>まず、<span class="math inline">\(P(X \geq x_0)\)</span> を計算する。無限級数の公式より <span class="math display">\[
+P(X \geq x_0) = \sum_{x = x_0}^{\infty} p(1-p)^{x}
+= \frac{p(1 - p)^{x_0}}{1 - (1 - p)} = (1 - p)^{x_0}
+\]</span> となる。 次に <a href="#eq-geometric_distribution_memorylessness">式&nbsp;1</a> を確かめる。 <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span id="eq-geometric_distribution_memorylessness_proof"><span class="math display">\[
+\begin{aligned}
+    P(X = x + x_0 | X \geq x_0) &amp;= \frac{P(X = x + x_0)}{P(X \geq x_0)}  \\
+    &amp;= \frac{p(1-p)^{x + x_0}}{(1-p)^{x_0}} \\
+    &amp;= p(1-p)^{x} = P(X = x)
+\end{aligned}
+\tag{2}\]</span></span></p>
+<p>以上から幾何分布が無記憶性を持つことがわかった。</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>証明</em> (非負整数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が幾何分布であることの証明). </span>十分性は上で示したので、必要性を示す。 <a href="#eq-geometric_distribution_memorylessness">式&nbsp;1</a> が成立するとき、 <span class="math display">\[
+P(X = x + x_0) = P(X \geq x_0) P(X = x)
+\]</span> となり、とくに <span class="math inline">\(x_0 = 1\)</span> のとき <span class="math display">\[
+\begin{aligned}
+P(X = x + 1) &amp;= P(X \geq 1) P(X = x) \\
+&amp;= (1 - P(X = 0)) P(X = 0) \\
+&amp;= (1 - p) P(X = 0)
+\end{aligned}
+\]</span> という漸化式が得られる。ここで <span class="math inline">\(P(X=0) = p\)</span> とおいた。 この漸化式より <span class="math display">\[
+P(X = x) = (1 - p) P(X = x - 1) = (1 - p)^{x} P(X = 0) = (1 - p)^{x}p
+\]</span> となり、幾何分布の確率関数になることがわかる。これで必要性が示された。</p>
+</div>
+</section>
+</section>
+<section id="負の2項分布" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="負の2項分布"><span class="header-section-number">1.4</span> 負の2項分布</h3>
+<div class="outline">
+<ul>
+<li><p>意味:</p>
+<p>ベルヌーイ試行の成功確率を <span class="math inline">\(p\)</span> とし、 確率変数 <span class="math inline">\(X\)</span> を <span class="math inline">\(r\)</span> 回成功するまでの失敗の回数とする。 <span class="math inline">\(X\)</span> は負の2項分布に従う。</p></li>
+<li><p>表記: <span class="math inline">\(NB(r, p)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>成功回数: <span class="math inline">\(r\)</span></li>
+<li>成功確率: <span class="math inline">\(p\)</span></li>
+</ul></li>
+<li><p>確率関数: <span class="math display">\[
+\begin{aligned}
+p (k) &amp;= \binom{r + k - 1}{k} p^r (1-p)^{k} \\
+&amp;= {}_{r} H_{k} ~ p^r (1-p)^{k}
+\end{aligned}
+\]</span></p></li>
+<li><p>確率母関数: <span class="math display">\[
+\begin{aligned}
+G (s) &amp;= \qty (\frac{p}{1 - qs})^{r} \\
+&amp;= \qty ( 1 - (s - 1) \frac{q}{p})^{-r}
+\end{aligned}
+\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [ X] = \frac{r(1 - p)}{p}, \quad
+Var \qty [ X ] = \frac{r(1 - p)}{p^2}
+\]</span></p></li>
+<li><p>再生性:</p>
+<p><span class="math inline">\(X_1 \sim NB(r_1, p), X_2 \sim NB(r_2, p)\)</span> のとき、 <span class="math inline">\(Y = X_1 + X_2\)</span>は<span class="math inline">\(NB(r_1 + r_2, p)\)</span>に従う。</p></li>
+</ul>
+</div>
+<section id="確率関数の意味" class="level4" data-number="1.4.1">
+<h4 data-number="1.4.1" class="anchored" data-anchor-id="確率関数の意味"><span class="header-section-number">1.4.1</span> 確率関数の意味</h4>
+<p>確率関数に重複組合せ <span class="math inline">\({}_{r} H_{k}\)</span> が出てくる意味について説明する。<br>
+<span class="math inline">\(r\)</span> 回の成功と <span class="math inline">\(x\)</span> 回の失敗の並び方の場合の数を考える。 最後は成功となることが決まっているので、それぞれの失敗は はじめ～1回目の成功の間、1回目の成功～2回目の成功の間、・・・、 <span class="math inline">\(r-1\)</span> 回目の成功～ <span class="math inline">\(r\)</span> 回目の成功の間 のどこかに位置することになる。この並び方の場合の数は重複組合せ <span class="math inline">\({}_{r} H_{k}\)</span> となる。</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-negative-binomial" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">graph LR
+A[はじめ] -- A1 --&gt; B[1回目の成功]
+B -- A2 --&gt; C[2回目の成功]
+C -- A3 --&gt; D["..."]
+D -- Ar-1 --&gt; E[r-1回目の成功]
+E -- Ar --&gt; F[r回目の成功]
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+<p></p><figcaption class="figure-caption">図&nbsp;1: A1からArのどこに失敗が位置するかの場合の数は重複組み合わせになる</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="超幾何分布" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="超幾何分布"><span class="header-section-number">1.5</span> 超幾何分布</h3>
+<div class="outline">
+<ul>
+<li><p>表記: <span class="math inline">\(HG(N, M, n)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>くじの総数: <span class="math inline">\(N\)</span></li>
+<li>あたりの数: <span class="math inline">\(M\)</span></li>
+<li>くじを引く回数: <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li><p>確率関数: <span class="math display">\[
+p (x) = \frac{{}_M C_{x} \times {}_{N-M} C_{n-x}}{{}_{N} C_{n}} , \quad
+  \max \{0, n - (N - M)\} \leq x \leq \min \{n, M\}
+\]</span></p></li>
+<li><p>確率母関数:</p>
+<p>初等的な関数では表せない</p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [X] = n \frac{M}{N}, \quad
+  Var \qty [ X ] = n \frac{M}{N} \qty (1 - \frac{M}{N}) \times \frac{N - n}{N - 1}
+\]</span></p></li>
+</ul>
+</div>
+<section id="確率関数の導出" class="level4" data-number="1.5.1">
+<h4 data-number="1.5.1" class="anchored" data-anchor-id="確率関数の導出"><span class="header-section-number">1.5.1</span> 確率関数の導出</h4>
+<p><span class="math inline">\(X = x\)</span> となる確率を求める。 <span class="math inline">\(N\)</span> 個のくじから <span class="math inline">\(n\)</span> 個を引く場合の数は <span class="math inline">\({}_{N} C_{n}\)</span> である。 このうち、あたりを <span class="math inline">\(x\)</span> 個引く場合の数は、 <span class="math inline">\(M\)</span> 個のあたりから <span class="math inline">\(x\)</span> 個をひき、 <span class="math inline">\(N - M\)</span> 個のはずれから <span class="math inline">\(n - x\)</span> 個ひく場合の数を考えれば良いので <span class="math inline">\({}_{M} C_{x} \times {}_{N - M} C_{n - x}\)</span> となる。 よって、求める確率は <span class="math display">\[
+P(X = x) = p(x) = \frac{{}_M C_{x} \times {}_{N-M} C_{n-x}}{{}_{N} C_{n}}
+\]</span> となる。<span class="math inline">\(x\)</span> の範囲は以下のように決められる。 <span class="math inline">\({}_M C_x = {}_M C_{M-x}\)</span> であり、 <span class="math inline">\(x \geq 0, M-x \geq\)</span> を満たす必要がある。 つまり <span class="math display">\[x \geq 0, \quad M \geq x\]</span> という条件が得られる。 同様に、<span class="math inline">\({}_{N - M} C_{n - x} = {}_{N - M} C_{N - M - n + x}\)</span> であり、 <span class="math inline">\(n - x \geq 0, N - M - n + x \geq 0\)</span> を満たす必要がある。 つまり <span class="math display">\[
+x \geq n - (N - M), \quad m \geq x
+\]</span> という条件が得られる。 以上の条件を合わせて <span class="math display">\[
+\max \{0, n - (N - M)\} \leq x \leq \min \{n, M\}
+\]</span> となる。</p>
+</section>
+</section>
+<section id="多項分布" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="多項分布"><span class="header-section-number">1.6</span> 多項分布</h3>
+<div class="outline">
+<ul>
+<li>確率関数 <span class="math display">\[\begin{aligned}
+  p(x_1, x_2, \dots, x_k) &amp; = \frac{n!}{x_1! x_2! \dots x_k!} p_1^{x_1} p_2^{x_2} \dots p_k^{x_k}   \\
+                          &amp; \qquad (p_1 + p_2 + \dots + p_k = 1, \quad x_1 + x_2 + \dots + x_k = n)
+  \end{aligned}\]</span></li>
+</ul>
+</div>
+</section>
+<section id="連続型分布" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="連続型分布">— 連続型分布 —</h3>
+</section>
+<section id="正規分布" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="正規分布"><span class="header-section-number">1.7</span> 正規分布</h3>
+<div class="outline">
+<ul>
+<li><p>表記: <span class="math inline">\(N(\mu, \sigma^2)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>平均: <span class="math inline">\(\mu\)</span></li>
+<li>分散: <span class="math inline">\(\sigma^2\)</span></li>
+</ul></li>
+<li><p>密度関数: <span class="math display">\[
+f (x) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp \qty ( - \frac{(x - \mu)^2}{2 \sigma^2} )
+\]</span></p></li>
+<li><p>積率母関数: <span class="math display">\[
+\phi(\theta) = \exp \qty ( \mu \theta + \frac{\sigma^2}{2} \theta^2 )
+\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [X] = \mu, \quad Var \qty [ X ] = \sigma^2
+\]</span></p></li>
+<li><p>再生性:</p>
+<p><span class="math inline">\(X_1 \sim N(\mu_1, \sigma_1^2), X_2 \sim N(\mu_2, \sigma_2^2)\)</span> のとき、 <span class="math inline">\(Y = X_1 + X_2\)</span> は <span class="math inline">\(N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)\)</span> に従う。</p></li>
+</ul>
+</div>
+<section id="積率母関数の計算" class="level4" data-number="1.7.1">
+<h4 data-number="1.7.1" class="anchored" data-anchor-id="積率母関数の計算"><span class="header-section-number">1.7.1</span> 積率母関数の計算</h4>
+<p><span class="math display">\[
+\begin{aligned}
+    \phi(\theta) &amp; = E \qty [e^{\theta X}]                                                                                                                                                                                           \\
+    &amp; = \int_{- \infty}^{\infty} \dd{x} e^{\theta x} \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \qty ( - \frac{(x - \mu)^2}{2 \sigma^2} )                                                                                     \\
+    &amp; = \int_{- \infty}^{\infty} \dd{x}  \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \qty ( - \frac{(x - \mu)^2}{2 \sigma^2} + \theta x )                                                                                      \\
+    &amp; = \int_{- \infty}^{\infty} \dd{x}  \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \qty ( -\frac{1}{2 \sigma^2} \qty (x - (\mu + \sigma^2 \theta))^2 - \frac{-(\mu + \sigma^2 \theta)^2 + \mu^2}{2 \sigma^2} ) &amp; (平方完成)      \\
+    &amp; = \int_{- \infty}^{\infty} \dd{x}  \frac{1}{\sqrt{2 \pi \sigma^2}} \exp \qty ( -\frac{1}{2 \sigma^2} \qty (x - (\mu + \sigma^2 \theta))^2) \exp \qty ( \mu \theta + \frac{\sigma^2}{2} \theta^2 )                 \\
+    &amp; = \exp \qty ( \mu \theta + \frac{\sigma^2}{2} \theta^2 )                                                                                                                                            &amp; (ガウス積分を実行)
+\end{aligned}
+\]</span></p>
+</section>
+<section id="標本平均と標本分散が独立であること" class="level4" data-number="1.7.2">
+<h4 data-number="1.7.2" class="anchored" data-anchor-id="標本平均と標本分散が独立であること"><span class="header-section-number">1.7.2</span> 標本平均と標本分散が独立であること</h4>
+<p>以下のことを示す</p>
+<div class="outline">
+<ul>
+<li><span class="math inline">\(\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span> と <span class="math inline">\(s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \bar{X})^2\)</span> が互いに独立である</li>
+<li><span class="math inline">\(\frac{(n - 1) s^2}{\sigma^2}\)</span> は自由度 <span class="math inline">\(n-1\)</span> のカイ2乗分布に従う</li>
+</ul>
+</div>
+<p>標準正規分布でない場合は標準化したものを考えればよいので、 一般性を失わず、 <span class="math inline">\(X_1, \dots, X_n \sim N(0, 1), i.i.d.\)</span> とする。 ベクトルの形で <span class="math inline">\(\va{X} = (X_1, \dots, X_n)^{T}\)</span> とすると、 <span class="math inline">\(\va{X} \sim N_n(\va{0}, I_n)\)</span> である。</p>
+<p>直交行列 <span class="math inline">\(G\)</span> を考える。<span class="math inline">\(G\)</span> の一行目はすべて <span class="math inline">\(\frac{1}{\sqrt{n}}\)</span> であるとする。 他の行は互いに直行するように構成すれば良い。 <span class="math inline">\(\va{Y}\)</span> を <span class="math inline">\(\va{Y} = G\va{X}\)</span> で定義する。 <span class="math inline">\(G\)</span> は直交行列なので、<span class="math inline">\(\va{Y} \sim N_n(\va{0}, I_n)\)</span> となり、 <span class="math inline">\(Y_1, \dots, Y_n\)</span> は互いに独立となる。 このとき、 <span class="math display">\[
+\sum_{i=1}^{n} Y_i^2 = \va{Y}^{T} \va{Y}
+  = \va{X}^T G^{T} G \va{X} = \va{X}^{T} \va{X} = \sum_{i=1}^{n} X_i^2
+\]</span></p>
+<p>また、 <span class="math display">\[Y_1 = \frac{1}{\sqrt{n}} \sum_{i=1}^{n} X_i = \sqrt{n}\bar{X}\]</span> となる。 偏差平方和を計算すると <span class="math display">\[
+\sum_{i=1}^{n} (X_i - \bar{X})^2
+  = \sum_{i=1}^{n} X_i^2 - 2 \bar{X} \sum_{i=1}^{n} X_i + n \bar{X}^2
+  = \sum_{i=1}^{n} Y_i^2 - n \bar{X}^2
+  = \sum_{i=1}^{n} Y_i^2 - Y_1^2
+  = \sum_{i=2}^{n} Y_i^2
+\]</span> となる。 これは互いに独立な標準正規分布に従う変数の二乗和であるから、 <span class="math inline">\(\sum_{i=2}^{n} Y_i^2 = \frac{(n - 1) s^2}{\sigma^2}\)</span> が自由度 <span class="math inline">\(n-1\)</span> のカイ2乗分布に従うことがわかった。 また、 <span class="math inline">\(s^2 = \frac{1}{n - 1} \sum_{i=1}^{n} (X_i - \bar{X})^2\)</span> が <span class="math inline">\(Y_2, \dots, Y_n\)</span> のみに依存し、 <span class="math inline">\(Y_1 = \sqrt{n} \bar{X}\)</span> に依存しないことから <span class="math inline">\(s^2\)</span> と <span class="math inline">\(\bar{X}\)</span> が独立であることがわかった。</p>
+</section>
+</section>
+<section id="多変量正規分布" class="level3" data-number="1.8">
+<h3 data-number="1.8" class="anchored" data-anchor-id="多変量正規分布"><span class="header-section-number">1.8</span> 多変量正規分布</h3>
+<div class="outline">
+<ul>
+<li><p>表記: <span class="math inline">\(N_n(\va{\mu}, \Sigma)\)</span></p></li>
+<li><p>パラメータ:</p>
+<ul>
+<li>平均ベクトル: <span class="math inline">\(\va{\mu}\)</span></li>
+<li>分散共分散行列: <span class="math inline">\(\Sigma\)</span></li>
+</ul></li>
+<li><p>密度関数: <span class="math display">\[
+f (\va{x})
+= \frac{1}{\sqrt{2\pi}^n \sqrt{|\Sigma|}}
+\exp \qty ( - \frac{1}{2} (\va{x} - \va{\mu})^{T} \Sigma^{-1} (\va{x} - \va{\mu}) )
+\]</span></p></li>
+<li><p>積率母関数: <span class="math display">\[
+\phi(\va{\theta})
+= \exp \qty ( \va{\mu}^{T} \va{\theta} + \frac{1}{2} \va{\theta}^{T} \Sigma \va{\theta} )
+\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [\va{X}] = \va{\mu}, \quad Var \qty [ \va{X} ] = \Sigma
+\]</span></p></li>
+<li><p>再生性:</p>
+<p><span class="math inline">\(\va{X}_1 \sim N(\va{\mu}_1, \Sigma_1), \va{X}_2 \sim N(\va{\mu}_2, \Sigma_2)\)</span> のとき、 <span class="math inline">\(\va{Y} = \va{X}_1 + \va{X}_2\)</span>は<span class="math inline">\(N(\va{\mu}_1 + \va{\mu}_2, \Sigma_1 + \Sigma_2)\)</span> に従う。</p></li>
+</ul>
+</div>
+<section id="精度行列" class="level4" data-number="1.8.1">
+<h4 data-number="1.8.1" class="anchored" data-anchor-id="精度行列"><span class="header-section-number">1.8.1</span> 精度行列</h4>
+</section>
+<section id="線形変換" class="level4" data-number="1.8.2">
+<h4 data-number="1.8.2" class="anchored" data-anchor-id="線形変換"><span class="header-section-number">1.8.2</span> 線形変換</h4>
+</section>
+<section id="周辺分布" class="level4" data-number="1.8.3">
+<h4 data-number="1.8.3" class="anchored" data-anchor-id="周辺分布"><span class="header-section-number">1.8.3</span> 周辺分布</h4>
+</section>
+<section id="条件付き分布" class="level4" data-number="1.8.4">
+<h4 data-number="1.8.4" class="anchored" data-anchor-id="条件付き分布"><span class="header-section-number">1.8.4</span> 条件付き分布</h4>
+</section>
+</section>
+<section id="カイ2乗分布" class="level3" data-number="1.9">
+<h3 data-number="1.9" class="anchored" data-anchor-id="カイ2乗分布"><span class="header-section-number">1.9</span> カイ2乗分布</h3>
+<div class="outline">
+<ul>
+<li><p>定義:</p>
+<p><span class="math inline">\(Z_i \sim N(0, 1), i = 1, \dots, n\)</span> で、これらが互いに独立なとき <span class="math inline">\(Y = Z_1^2 + \dots + Z_n^2\)</span> が従う分布を自由度 <span class="math inline">\(n\)</span> のカイ2乗分布という。</p></li>
+<li><p>表記: <span class="math inline">\(\chi^2(n)\)</span></p></li>
+<li><p>パラメータ</p>
+<ul>
+<li>自由度: <span class="math inline">\(n\)</span></li>
+</ul></li>
+<li><p>密度関数: <span class="math display">\[
+f (x) = \frac{1}{\Gamma(\frac{n}{2}) 2^{\frac{n}{2}}}
+  y^{\frac{n}{2} - 1} e^{- \frac{y}{2}}, \quad (y &gt; 0)
+\]</span></p></li>
+<li><p>積率母関数: <span class="math display">\[\phi(\theta) =\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [X] = n, \quad Var \qty [ X ] = 2n
+\]</span></p></li>
+<li><p>再生性:</p>
+<p><span class="math inline">\(X_1 \sim \chi^2(n_1), X_2 \sim \chi^2(n_2)\)</span> のとき、 <span class="math inline">\(Y = X_1 + X_2\)</span> は <span class="math inline">\(\chi^2(n_1 + n_2)\)</span> に従う。</p></li>
+</ul>
+</div>
+</section>
+<section id="f-分布" class="level3" data-number="1.10">
+<h3 data-number="1.10" class="anchored" data-anchor-id="f-分布"><span class="header-section-number">1.10</span> <span class="math inline">\(F\)</span> 分布</h3>
+<div class="outline">
+<ul>
+<li><p>定義:</p>
+<p><span class="math inline">\(X_1 \sim \chi^2(n_1), X_2 \sim \chi^2(n_2)\)</span> でこれらが互いに独立なとき、 <span class="math display">\[
+  \frac{X_1/n_1}{X_2/n_2}
+  \]</span></p>
+<p>が従う分布を自由度 <span class="math inline">\((n_1, n_2)\)</span> の <span class="math inline">\(F\)</span> 分布という。</p></li>
+<li><p>表記: <span class="math inline">\(F(n_1, n_2)\)</span></p></li>
+<li><p>パラメータ:</p>
+<ul>
+<li>自由度: <span class="math inline">\((n_1, n_2)\)</span></li>
+</ul></li>
+<li><p>密度関数: <span class="math display">\[
+f (x) =
+\]</span></p></li>
+<li><p>積率母関数: <span class="math display">\[
+\phi(\theta) =
+\]</span></p></li>
+<li><p>期待値・分散: <span class="math display">\[
+E \qty [X] = , \quad Var \qty [ X ] =
+\]</span></p></li>
+</ul>
+</div>
+</section>
+<section id="t-分布" class="level3" data-number="1.11">
+<h3 data-number="1.11" class="anchored" data-anchor-id="t-分布"><span class="header-section-number">1.11</span> <span class="math inline">\(t\)</span> 分布</h3>
+<div class="outline">
+<p><span class="math inline">\(Z \sim N(0, 1), Y \sim \chi^2(n)\)</span> で、これらが互いに独立なとき、 <span class="math display">\[T = \frac{Z}{\sqrt{Y/n}}\]</span> が従う分布を自由度<span class="math inline">\(n\)</span>の<span class="math inline">\(t\)</span>分布という。</p>
+<p><span class="math display">\[t(n)\]</span></p>
+<p><span class="math inline">\(n\)</span></p>
+<p><span class="math display">\[f (x) = \frac{\Gamma(\frac{n+1}{2})}{\sqrt{\pi n}\Gamma{\frac{n}{2}}}
+    \qty ( 1 + \frac{t^2}{n} )^{- \frac{n+1}{2}}\]</span></p>
+<p><span class="math display">\[\phi(\theta) =\]</span></p>
+<p><span class="math display">\[E \qty [X] = 0 \quad (n &gt; 1), \quad Var \qty [ X ] = \frac{n}{n - 2} \quad (n &gt; 2)\]</span></p>
+</div>
+</section>
+<section id="指数分布" class="level3" data-number="1.12">
+<h3 data-number="1.12" class="anchored" data-anchor-id="指数分布"><span class="header-section-number">1.12</span> 指数分布</h3>
+<div class="outline">
+<p><span class="math display">\[Ex(\lambda)\]</span></p>
+<p><span class="math inline">\(\lambda &gt; 0\)</span></p>
+<p><span class="math display">\[f(x) = \lambda e^{- \lambda x}, \quad x &gt; 0\]</span></p>
+<p><span class="math display">\[\phi (\theta) = \frac{\lambda}{\lambda - \theta}\]</span></p>
+<p><span class="math display">\[E \qty [ X] = \frac{1}{\lambda}, \quad Var \qty [ X ] = \frac{1}{\lambda^2}\]</span></p>
+</div>
+<section id="無記憶性-1" class="level4" data-number="1.12.1">
+<h4 data-number="1.12.1" class="anchored" data-anchor-id="無記憶性-1"><span class="header-section-number">1.12.1</span> 無記憶性</h4>
+<p>指数分布は無記憶性を持つ <span class="math display">\[\label{eq:exponential_distribution_memorylessness}
+  P(T = t + t_0 | T \geq t_0) = P(T = t)\]</span></p>
+<section id="無記憶性を持つことの証明-1" class="level5" data-number="1.12.1.1">
+<h5 data-number="1.12.1.1" class="anchored" data-anchor-id="無記憶性を持つことの証明-1"><span class="header-section-number">1.12.1.1</span> 無記憶性を持つことの証明</h5>
+<p><span class="math inline">\(T \sim Ex(\lambda)\)</span>とする。 <span class="math inline">\(T\)</span>の確率密度関数は<span class="math inline">\(f(t) = \lambda e^{-\lambda t}\)</span>である。 <span class="math inline">\(T &gt; t_0\)</span>が与えられたときの<span class="math inline">\(T\)</span>の条件付き確率密度関数を求める。 <span class="math display">\[\begin{aligned}
+    f_{T | T &gt; t_0} (t) \dd{t} &amp;= P( t \leq T \leq t + \dd{t} | T &gt; t_0) \\
+    &amp;= \frac{P( t \leq T \leq t + \dd{t} , T &gt; t_0)}{P(T &gt; t_0)}  \\
+    &amp;= \frac{P( t \leq T \leq t + \dd{t} , t &gt; t_0)}{\int_{t_0}^{\infty}\dd{t}f(t)} \\
+    &amp;= \frac{f(t)\dd{t} \times I_{[t&gt;t_0]}(t)}{e^{-\lambda t_0}} \\
+    &amp;= \lambda e^{-\lambda (t - t_0)} I_{[t&gt;t_0]}(t) \dd{t}
+  \end{aligned}\]</span> であるから、 <span class="math display">\[f_{T | T &gt; t_0} (t) =  \lambda e^{-\lambda (t - t_0)}  \quad (t &gt; t_0)\]</span> となる。 これは基準点を<span class="math inline">\(t_0\)</span>にずらした変数<span class="math inline">\(\tilde{T} = T - t_0\)</span>の確率密度関数と等しくなる。 指数分布が無記憶性を持つことがわかった。</p>
+</section>
+<section id="正の実数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が指数分布であることの証明" class="level5" data-number="1.12.1.2">
+<h5 data-number="1.12.1.2" class="anchored" data-anchor-id="正の実数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が指数分布であることの証明"><span class="header-section-number">1.12.1.2</span> 正の実数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が指数分布であることの証明</h5>
+<p>十分性は上で示したので、必要性を示す。 <a href="#eq:exponential_distribution_memorylessness" data-reference-type="ref" data-reference="eq:exponential_distribution_memorylessness">[eq:exponential_distribution_memorylessness]</a>が成り立つとき、 <span class="math display">\[f(t + t_0) = (1 - F(t_0)) f(t) = f(t) - F(t_0) f(t)\]</span> となる。ここで<span class="math inline">\(t_0 = \Delta t\)</span>と書き、<span class="math inline">\(\Delta t\)</span>が小さい時を考える。 すると <span class="math display">\[\frac{f(t + \Delta t) - f(t)}{\Delta t} =
+   - \frac{1}{\Delta t} \qty ( \int_{0}^{\Delta t} \dd{t} f(t)) f(t)\]</span> と書くことができ、<span class="math inline">\(\Delta t \rightarrow 0\)</span>で上式は <span class="math display">\[f'(t) = - f(0) f(t)\]</span> という微分方程式が得られる。<span class="math inline">\(f(0)\)</span>は定数であるので、<span class="math inline">\(f(0)=\lambda\)</span>とおく。 この微分方程式を解くと <span class="math display">\[f(t) = \lambda e^{- \lambda t}\]</span> となる。ここで全体にかかる係数<span class="math inline">\(\lambda\)</span>は上で決めた<span class="math inline">\(f(0)=\lambda\)</span>から定まる。 これは指数分布の密度関数である。これで必要性が示された。</p>
+</section>
+</section>
+</section>
+<section id="ガンマ分布" class="level3" data-number="1.13">
+<h3 data-number="1.13" class="anchored" data-anchor-id="ガンマ分布"><span class="header-section-number">1.13</span> ガンマ分布</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/gamma_pdf.png" class="img-fluid figure-img" style="width:15cm"></p>
+<p></p><figcaption class="figure-caption">ガンマ分布の密度関数</figcaption><p></p>
+</figure>
+</div>
+<div class="outline">
+<p><span class="math display">\[Ga(\nu, \alpha)\]</span></p>
+<p><span class="math inline">\(\nu &gt; 0\)</span> <span class="math inline">\(\alpha &gt; 0\)</span></p>
+<p><span class="math display">\[f(x) = \frac{1}{\alpha^{\nu} \Gamma (\nu)} x ^ {\nu - 1} e ^ {- \frac{x}{\alpha}}, \quad x &gt;0\]</span></p>
+<p><span class="math display">\[\phi (\theta) = ( 1 - \theta \alpha) ^ {- \nu}\]</span></p>
+<p><span class="math display">\[E \qty [ X] = \nu \alpha, \quad Var \qty [ X ] = \nu \alpha ^2\]</span></p>
+<p><span class="math inline">\(X_1 \sim Ga(\nu_1, \alpha), X_2 \sim Ga(\nu_2, \alpha)\)</span> のとき、 <span class="math inline">\(Y = X_1 + X_2\)</span>は<span class="math inline">\(Ga(\nu_1 + \nu_2, \alpha)\)</span>に従う。</p>
+</div>
+<section id="期待値分散の計算" class="level4" data-number="1.13.1">
+<h4 data-number="1.13.1" class="anchored" data-anchor-id="期待値分散の計算"><span class="header-section-number">1.13.1</span> 期待値・分散の計算</h4>
+<p><span class="math inline">\(X \sim Ga(\nu, 1)\)</span>とする。</p>
+<p><span class="math inline">\(X\)</span>の期待値 <span class="math display">\[\begin{aligned}
+    E \qty [X] &amp; = \int_0^{\infty} \frac{x}{\Gamma(\nu)} x^{\nu - 1} e^{-x} \dd{x}
+    = \frac{1}{\Gamma(\nu)} \int_0^{\infty}  x^{(\nu + 1) - 1} e^{-x} \dd{x}       \\
+               &amp; = \frac{\Gamma(\nu + 1)}{\Gamma(\nu)}
+    = \frac{\nu !}{(\nu - 1)!}                                                     \\
+               &amp; = \nu
+  \end{aligned}\]</span></p>
+<p><span class="math inline">\(X^2\)</span>の期待値 <span class="math display">\[\begin{aligned}
+    E \qty [X^2] &amp; = \int_0^{\infty} \frac{x^2}{\Gamma(\nu)} x^{\nu - 1} e^{-x} \dd{x}
+    = \frac{1}{\Gamma(\nu)} \int_0^{\infty}  x^{(\nu + 2) - 1} e^{-x} \dd{x}           \\
+                 &amp; = \frac{\Gamma(\nu + 2)}{\Gamma(\nu)}
+    = \frac{(\nu + 1)!}{(\nu - 1)!}                                                    \\
+                 &amp; = (\nu + 1)\nu
+  \end{aligned}\]</span></p>
+<p><span class="math inline">\(X\)</span>の分散 <span class="math display">\[Var \qty [X] = E \qty [X^2] - (E \qty [X])^2 = (\nu + 1)\nu - \nu^2 = \nu\]</span></p>
+<p><span class="math inline">\(Y = \alpha X\)</span>とすると、<span class="math inline">\(Y \sim Ga(\nu, \alpha)\)</span>となる。</p>
+<p><span class="math inline">\(Y\)</span>の期待値 <span class="math display">\[E \qty [Y] = E \qty [\alpha X] = \alpha \nu\]</span></p>
+<p><span class="math inline">\(Y\)</span>の分散 <span class="math display">\[Var \qty [Y] = Var \qty [\alpha X] = \alpha^2 \nu\]</span></p>
+</section>
+</section>
+<section id="ベータ分布" class="level3" data-number="1.14">
+<h3 data-number="1.14" class="anchored" data-anchor-id="ベータ分布"><span class="header-section-number">1.14</span> ベータ分布</h3>
+<p><span class="math inline">\(X \sim Be(\alpha, \beta)\)</span>のとき、<span class="math inline">\(1 - X \sim Be(\beta, \alpha)\)</span></p>
+</section>
+</section>
+<section id="分布の間の関係" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="分布の間の関係"><span class="header-section-number">2</span> 分布の間の関係</h2>
+<section id="ガンマ分布とカイ2乗分布" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="ガンマ分布とカイ2乗分布"><span class="header-section-number">2.1</span> ガンマ分布とカイ2乗分布</h3>
+<p><span class="math inline">\(Ga(\frac{n}{2}, 2)\)</span>は自由度<span class="math inline">\(n\)</span>のカイ2乗分布になる</p>
+</section>
+<section id="ガンマ分布と指数分布" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="ガンマ分布と指数分布"><span class="header-section-number">2.2</span> ガンマ分布と指数分布</h3>
+<p><span class="math inline">\(Ga(1, \frac{1}{\lambda})\)</span>はパラメータ<span class="math inline">\(\lambda\)</span>の指数分布<span class="math inline">\(Ex(\lambda)\)</span>になる</p>
+</section>
+<section id="ガンマ分布と負の二項分布" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="ガンマ分布と負の二項分布"><span class="header-section-number">2.3</span> ガンマ分布と負の二項分布</h3>
+<p>ガンマ分布は負の2項分布を連続変数化したものと考えられる</p>
+<div class="outline">
+<p>ポアソン分布に従うイベントが<span class="math inline">\(\nu\)</span>回起こるまでの時間。 ポアソン分布に従うイベントが1回起こるまでの時間。</p>
+<p>ベルヌーイ試行が<span class="math inline">\(r\)</span>回成功するまでの失敗の回数。 ベルヌーイ試行が1回成功するまでの失敗の回数。</p>
+</div>
+</section>
+<section id="二項分布とポアソン分布" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="二項分布とポアソン分布"><span class="header-section-number">2.4</span> 二項分布とポアソン分布</h3>
+<p><span class="math display">\[\begin{aligned}
+    p(x) &amp;= \binom{n}{x} p^{x} (1 - p)^{n -x} \\
+    &amp;= \frac{n!}{x! (n - x)!} \qty (\frac{\lambda}{n})^{x} \qty (1 - \frac{\lambda}{n})^{n - x}  &amp; (\lambda = np) \\
+    &amp;= \frac{1}{x!} n \cdot (n - 1) \cdot \dots \cdot (n - x + 1) \qty (\frac{\lambda}{n})^{x} \qty (1 - \frac{\lambda}{n})^{n - x} \\
+    &amp;= \frac{1}{x!} 1 \cdot \qty(1 - \frac{1}{n}) \cdot \dots \cdot \qty (1 - \frac{x - 1}{n})
+    \lambda^{x} \qty (1 - \frac{\lambda}{n})^{n}  \qty (1 - \frac{\lambda}{n})^{-x} \\
+    &amp;= \frac{1}{x!} 1 \cdot \qty(1 - \frac{1}{n}) \cdot \dots \cdot \qty (1 - \frac{x - 1}{n})
+    \lambda^{x} \qty { \qty (1 - \frac{\lambda}{n})^{-\frac{n}{\lambda}} }^{- \lambda} \qty (1 - \frac{\lambda}{n})^{-x} \\
+    &amp;\rightarrow \frac{\lambda^x}{x!}e^{-\lambda} &amp; (n \rightarrow \infty)
+  \end{aligned}\]</span></p>
+</section>
+<section id="指数分布とポアソン分布" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="指数分布とポアソン分布"><span class="header-section-number">2.5</span> 指数分布とポアソン分布</h3>
+<section id="ポアソン分布から指数分布を導く" class="level4" data-number="2.5.1">
+<h4 data-number="2.5.1" class="anchored" data-anchor-id="ポアソン分布から指数分布を導く"><span class="header-section-number">2.5.1</span> ポアソン分布から指数分布を導く</h4>
+<p>単位時間あたり平均で<span class="math inline">\(\lambda\)</span>回ランダムに発生するイベントが 時間<span class="math inline">\((0, t)\)</span>の間に発生する回数は<span class="math inline">\(Po(\lambda t)\)</span>に従う。 <span class="math inline">\(X \sim Po(\lambda t)\)</span>とする。<span class="math inline">\(X\)</span>の確率関数は <span class="math display">\[p(x) = \frac{(\lambda t)^x}{x!}e^{-\lambda t}\]</span> である。 イベントが1回発生するまでの時間を表す確率変数を<span class="math inline">\(T\)</span>とする。 <span class="math inline">\(T\)</span>の分布関数は <span class="math display">\[\begin{aligned}
+    F(t) &amp;= P(T \leq t) \\
+    &amp;= 1 - P(T &gt; t) \\
+    &amp;= 1 - (時間(0, t)内に一回もイベントが発生しない確率) \\
+    &amp;= 1 - P(X = 0) \\
+    &amp;= 1 - p(x=0) \\
+    &amp;= 1 - e^{-\lambda t}
+  \end{aligned}\]</span> となり、これは指数分布の分布関数である。 密度関数を計算すると <span class="math display">\[f(t) = \dv{t} F(t) = \lambda e^{- \lambda t}\]</span> となる。</p>
+</section>
+<section id="指数分布からポアソン分布を導く" class="level4" data-number="2.5.2">
+<h4 data-number="2.5.2" class="anchored" data-anchor-id="指数分布からポアソン分布を導く"><span class="header-section-number">2.5.2</span> 指数分布からポアソン分布を導く</h4>
+<p><span class="math inline">\(T_i\)</span>をイベントが発生するまでの時間を表す確率変数とし、<span class="math inline">\(T_i \sim Ex(\lambda)\)</span>とする。 <span class="math display">\[U_k = \sum_{i=1}^{k} T_i\]</span> とし、<span class="math inline">\(X\)</span>を <span class="math display">\[X = (U_k &lt; t を満たす最大のk)\]</span> と定義する。つまり<span class="math inline">\(X\)</span>は時刻<span class="math inline">\(t\)</span>までに発生したイベントの回数を表す確率変数である。 <span class="math inline">\(X=k\)</span>となる確率を求めると <span class="math display">\[\begin{aligned}
+    P(X = k) &amp;= (k回目のイベントが時刻(0, t)の間に発生し、k+1回目のイベントは時刻tより後に発生する確率) \\
+    &amp;= \int_{0}^{t} P(U_k = s, U_{k+1} &gt; t) \dd{s}
+    = \int_{0}^{t} P(U_k = s) P(U_{k+1} &gt; t | U_k = s) \dd{s} \\
+    &amp;= \int_{0}^{t} P(U_k = s) P(T_{k+1} &gt; t-s) \dd{s}
+    = \int_{0}^{t} \frac{\lambda^k}{\Gamma(k)} s^{k-1} e^{-\lambda t}
+    e^{- \lambda (t-s)} \dd{s}  \\
+    &amp;= \frac{\lambda^k}{(k -1)!} e^{-\lambda t} \int_{0}^{t} s^{k-1} \dd{s}
+    = \frac{\lambda^k}{(k -1)!}e^{-\lambda t} \frac{1}{k} t^{k} \\
+    &amp;= \frac{(\lambda t)^k}{k!}e^{-\lambda t}
+  \end{aligned}\]</span> となり、これは<span class="math inline">\(Po(\lambda t)\)</span>の確率関数である。 途中で<span class="math inline">\(U_k \sim Ga(k, 1/\lambda)\)</span>であることを使った。</p>
+</section>
+</section>
+<section id="指数分布と幾何分布" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="指数分布と幾何分布"><span class="header-section-number">2.6</span> 指数分布と幾何分布</h3>
+<p><span class="math inline">\(T\)</span>をイベントが発生するまでの時間を表す確率変数とし、<span class="math inline">\(T \sim Ex(\lambda)\)</span>とする。 時間を間隔<span class="math inline">\(d\)</span>で離散化する。 離散化した各時間の中で初めてイベントが発生する確率は <span class="math display">\[\begin{aligned}
+  &amp;時間(0, d]の間に初めてイベントが発生する確率 &amp;&amp;= P(T \leq d) = 1 - e^{- \lambda d} \\
+  &amp;時間(d, 2d]の間に初めてイベントが発生する確率 = P(T \leq 2d | T &gt; d) &amp;&amp;= P(T \leq d) = 1 - e^{- \lambda d} \\
+  &amp;時間(2d, 3d]の間に初めてイベントが発生する確率 = P(T \leq 3d | T &gt; 2d) &amp;&amp;= P(T \leq d) = 1 - e^{- \lambda d} \\
+  &amp; &amp;&amp;\vdots
+\end{aligned}\]</span> となる。ここで指数分布の無記憶性を使った。 つまり各時間間隔<span class="math inline">\(d\)</span>のなかで初めてイベントが発生する確率は常に等しく <span class="math inline">\(p = 1 - e^{-\lambda d}\)</span>となる。</p>
+<p><span class="math inline">\(x\)</span>を整数とする。時刻<span class="math inline">\(xd\)</span>までイベントが発生せず、 時間<span class="math inline">\((xd, (x+1)d]\)</span>の間に初めてイベントが起こったとき<span class="math inline">\(X=x\)</span>となるように確率変数<span class="math inline">\(X\)</span>を定める。 このとき、<span class="math inline">\(X\)</span>はパラメータ<span class="math inline">\(p = 1 - e^{-\lambda d}\)</span>の幾何分布<span class="math inline">\(Ge(p)\)</span>に従う。</p>
+</section>
+</section>
+<section id="十分統計量" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="十分統計量"><span class="header-section-number">3</span> 十分統計量</h2>
+<section id="概要" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="概要"><span class="header-section-number">3.1</span> 概要</h3>
+<section id="十分統計量の定義" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="十分統計量の定義"><span class="header-section-number">3.1.1</span> 十分統計量の定義</h4>
+<p><span class="math inline">\(k\)</span>個の統計量<span class="math inline">\(T = ( T_1, \dots, T_k )\)</span>がパラメータ<span class="math inline">\(\theta\)</span>に関する<span class="math inline">\(k\)</span>次元の十分統計量であるとは、 <span class="math inline">\(T\)</span>を与えられたとき<span class="math inline">\(X = ( X_1, \dots, X_n )\)</span>の条件付き分布が<span class="math inline">\(\theta\)</span>に依存しないことである。 <span class="math display">\[\label{eq:sufficient_statistic_definition}
+  P(X | T, \theta) = P(X | T)\]</span></p>
+<p>ベイズ統計のように<span class="math inline">\(\theta\)</span>を確率変数として考えれば、<a href="#eq:sufficient_statistic_definition" data-reference-type="ref" data-reference="eq:sufficient_statistic_definition">[eq:sufficient_statistic_definition]</a>は、 <span class="math inline">\(T\)</span>を与えたときに<span class="math inline">\(X\)</span>と<span class="math inline">\(\theta\)</span>が条件付き独立となることを意味する。 <span class="math inline">\(X\)</span>と<span class="math inline">\(\theta\)</span>が条件付き独立ということは、<span class="math inline">\(T\)</span>さえ知っていればそれ以上<span class="math inline">\(X\)</span>から<span class="math inline">\(\theta\)</span>の情報が得られないということ。 つまり<span class="math inline">\(T\)</span>だけ知っていれば<span class="math inline">\(X\)</span>から得られる<span class="math inline">\(\theta\)</span>に関する情報はすべてわかるということ。</p>
+</section>
+<section id="分解定理" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="分解定理"><span class="header-section-number">3.1.2</span> 分解定理</h4>
+<p><span class="math inline">\(X\)</span>を離散確率変数または連続確率変数とし<span class="math inline">\(p_\theta\)</span>を<span class="math inline">\(X\)</span>の確率関数または密度関数とする。 <span class="math inline">\(T(X) = ( T_1(X), \dots, T_k(X))\)</span>が十分統計量であるための必要十分条件は<span class="math inline">\(p_\theta\)</span>が <span class="math display">\[p_\theta (x) = g_\theta (T(x)) h(x)\]</span></p>
+<p>の形に分解できることである。ここで<span class="math inline">\(h(x)\)</span>は<span class="math inline">\(\theta\)</span>を含まない<span class="math inline">\(x\)</span>のみの関数である。</p>
+</section>
+<section id="ラオブラックウェルの定理" class="level4" data-number="3.1.3">
+<h4 data-number="3.1.3" class="anchored" data-anchor-id="ラオブラックウェルの定理"><span class="header-section-number">3.1.3</span> ラオ・ブラックウェルの定理</h4>
+<p><span class="math inline">\(\delta(X)\)</span>を未知パラメータ<span class="math inline">\(\theta\)</span>の推定量とし、 平均二乗誤差<span class="math inline">\(R(\theta, \delta) = E_{\theta} \qty [(\delta(X) - \theta)^2]\)</span>をリスク関数とする。 ここで、十分統計量<span class="math inline">\(T\)</span>を与えたときの<span class="math inline">\(X\)</span>の条件付き分布を用いて<span class="math inline">\(\delta(X)\)</span>の条件付き期待値をとったものを<span class="math inline">\(\delta^{*}(T)\)</span>とする。 すなわち <span class="math display">\[\delta^{*}(T) = E \qty [ \delta(X) | T ]\]</span> である。このとき次のことが成り立つ。 <span class="math display">\[E_{\theta} \qty [(\delta^{*}(T) - \theta)^2] \leq E_{\theta} \qty [(\delta(X) - \theta)^2], \quad \forall \theta\]</span> であり、等号が成立するのは<span class="math inline">\(P_{\theta}(\delta(X) = \delta^{*}(T)) = 1\)</span>となるときのみである。 <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="完備性の定義" class="level4" data-number="3.1.4">
+<h4 data-number="3.1.4" class="anchored" data-anchor-id="完備性の定義"><span class="header-section-number">3.1.4</span> 完備性の定義</h4>
+<p>統計量<span class="math inline">\(T(X)\)</span>が完備であるとは、<span class="math inline">\(T\)</span>の関数<span class="math inline">\(g(T)\)</span>のなかで恒等的にその期待値が0となるものは、 定数0に限るということである。 すなわち、任意の関数<span class="math inline">\(g(T)\)</span>に対し <span class="math display">\[E_{\theta} \qty [g(T)] = 0, \quad \forall \theta \Rightarrow g(T) \equiv 0\]</span> が成り立つならば<span class="math inline">\(T\)</span>は完備である。 <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+</section>
+<section id="ポアソン分布-1" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="ポアソン分布-1"><span class="header-section-number">3.2</span> ポアソン分布</h3>
+<section id="十分統計量の計算" class="level5" data-number="3.2.0.1">
+<h5 data-number="3.2.0.1" class="anchored" data-anchor-id="十分統計量の計算"><span class="header-section-number">3.2.0.1</span> 十分統計量の計算</h5>
+<p><span class="math inline">\(X_1, \dots, X_n \sim Po(\lambda), i.i.d.\)</span>とする。確率関数は <span class="math display">\[p_\lambda(x) = \prod_{i=1}^{n} \frac{\lambda^{x_i}}{x_i !} e^{- \lambda}
+  = \lambda ^{\sum_{i=1}^{n} x_i} e^{-n \lambda} \qty ( \prod_{i=1}^{n} x_i ! ) ^{-1}\]</span> と表される。ここで <span class="math display">\[g_\lambda = \lambda ^{\sum_{i=1}^{n} x_i} e^{-n \lambda}, \quad h(x) = \qty ( \prod_{i=1}^{n} x_i ! ) ^{-1}\]</span> とおけば、<span class="math inline">\(T = \sum_{i=1}^{n}X_i\)</span>が十分統計量であることがわかる。</p>
+</section>
+</section>
+<section id="正規分布-1" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="正規分布-1"><span class="header-section-number">3.3</span> 正規分布</h3>
+<section id="一次元の十分統計量の計算" class="level5" data-number="3.3.0.1">
+<h5 data-number="3.3.0.1" class="anchored" data-anchor-id="一次元の十分統計量の計算"><span class="header-section-number">3.3.0.1</span> 一次元の十分統計量の計算</h5>
+<p><span class="math inline">\(X_1, \dots, X_n \sim N(\mu, 1), i.i.d.\)</span>とする。<span class="math inline">\(X\)</span>の同時密度関数は <span class="math display">\[\begin{aligned}
+    f(x) &amp; = \frac{1}{(2\pi)^{n/2}} \exp \qty [ - \frac{1}{2} \sum_{i=1}^{n} (x_i - \mu)^2 ]                                                                                                      \\
+         &amp; = \frac{1}{(2\pi)^{n/2}} \exp \qty [ - \frac{1}{2} \sum_{i=1}^{n} (x_i - \bar{x} + \bar{x} - \mu)^2 ]                                                                                  \\
+         &amp; = \frac{1}{(2\pi)^{n/2}} \exp \qty [ - \frac{1}{2} \sum_{i=1}^{n} (x_i - \bar{x})^2  - \sum_{i=1}^{n} (x_i - \bar{x})(\bar{x} - \mu)  - \frac{1}{2} \sum_{i=1}^{n} (\bar{x} - \mu)^2 ] \\
+         &amp; = \frac{1}{(2\pi)^{n/2}} \exp \qty [ - \frac{1}{2} \sum_{i=1}^{n} (x_i - \bar{x})^2 - \frac{n (\bar{x} - \mu)^2}{2} ]
+  \end{aligned}\]</span> と表すことができる。したがって、 <span class="math display">\[g_\mu = \frac{1}{(2\pi)^{n/2}} \exp \qty (- \frac{n (\bar{x} - \mu)^2}{2}), \quad
+  h(x) = \exp \qty (- \frac{1}{2} \sum_{i=1}^{n} (x_i - \bar{x})^2)\]</span> とおけば、分解定理より<span class="math inline">\(\bar{X}\)</span>が十分統計量であることがわかる。</p>
+</section>
+</section>
+<section id="一様分布" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="一様分布"><span class="header-section-number">3.4</span> 一様分布</h3>
+<section id="一次元の十分統計量の計算-1" class="level5" data-number="3.4.0.1">
+<h5 data-number="3.4.0.1" class="anchored" data-anchor-id="一次元の十分統計量の計算-1"><span class="header-section-number">3.4.0.1</span> 一次元の十分統計量の計算</h5>
+<p><span class="math inline">\(X_1, ..., X_n \sim U[0, \theta]\)</span>とする。同時密度関数は <span class="math display">\[\label{eq:uniform_pdf}
+  f_\theta (x) =
+  \begin{dcases}
+    \frac{1}{\theta^{n}}, &amp; \text{ if } 0 \leq x_i \leq \theta, \forall i \\
+    0,                    &amp; \text{otherwise}
+  \end{dcases}\]</span> と表される。ここで、<span class="math inline">\(X_{max} = \max_{i} X_i\)</span>とし、以下の関数を定義する。 <span class="math display">\[I _{[x_{max} \leq \theta]}(x) =
+  \begin{dcases}
+    1, &amp; \text{ if } x_{max} \leq \theta \\
+    0, &amp; \text{ otherwise}
+  \end{dcases}\]</span></p>
+<p><span class="math display">\[h(x) = h(x_1, \dots, x_n) =
+  \begin{dcases}
+    1, &amp; \text{ if } x_i \geq 0, \forall i \\
+    0, &amp; \text{ otherwise }
+  \end{dcases}\]</span></p>
+<p><span class="math inline">\(x_i \geq 0, \forall i \Leftrightarrow x_{max} \leq \theta\)</span>であることに注意すれば、<a href="#eq:uniform_pdf" data-reference-type="ref" data-reference="eq:uniform_pdf">[eq:uniform_pdf]</a>は <span class="math display">\[f_{\theta} (x) = \frac{1}{\theta^n} I _{[x_{max} \leq \theta]}(x) h(x)\]</span> と書ける。したがって、 <span class="math display">\[g_{\theta} = \frac{1}{\theta^n} I _{[x_{max} \leq \theta]}(x)\]</span> とおけば、分解定理より<span class="math inline">\(T(X) = X_{max}\)</span>が十分統計量であることがわかる。</p>
+</section>
+</section>
+</section>
+<section id="不偏推定量" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="不偏推定量"><span class="header-section-number">4</span> 不偏推定量</h2>
+<section id="概要-1" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="概要-1"><span class="header-section-number">4.1</span> 概要</h3>
+<section id="不偏推定量の定義" class="level4" data-number="4.1.1">
+<h4 data-number="4.1.1" class="anchored" data-anchor-id="不偏推定量の定義"><span class="header-section-number">4.1.1</span> 不偏推定量の定義</h4>
+<p><span class="math inline">\(\hat{\theta}\)</span>が不偏推定量であるとは、 <span class="math display">\[E_{\theta} \qty [\hat(\theta)(X)] = \theta, \quad \forall \theta\]</span> が成り立つことである。</p>
+</section>
+<section id="一様最小分散不偏推定量uniformly-minimum-variance-unbiased-estimator-umvuの定義" class="level4" data-number="4.1.2">
+<h4 data-number="4.1.2" class="anchored" data-anchor-id="一様最小分散不偏推定量uniformly-minimum-variance-unbiased-estimator-umvuの定義"><span class="header-section-number">4.1.2</span> 一様最小分散不偏推定量(Uniformly Minimum Variance Unbiased estimator, UMVU)の定義</h4>
+<p><span class="math inline">\(\hat{\theta}\)</span>が不偏推定量であれば平均二乗誤差は分散に一致する。 <span class="math display">\[E_{\theta} \qty [( \hat{\theta} - \theta )] = E_{\theta} \qty [( \hat{\theta} - E_{\theta}[\hat{\theta}] )] = Var_{\theta} \qty [\hat{\theta}]\]</span> したがって、不偏推定量に限れば、分散を最小にする推定量が望ましい推定量となる。</p>
+<p>不偏推定量<span class="math inline">\(\hat{\theta}^{*}\)</span>がUMVUであるとは、任意の不偏推定量<span class="math inline">\(\hat{\theta}\)</span>について <span class="math display">\[Var_{\theta} \qty [\hat{\theta}^{*}] \leq Var_{\theta} \qty [\hat{\theta}], \quad \forall \theta\]</span> が成り立つことである。</p>
+<div class="outline">
+<p>与えられた不偏推定量がUMVUであることを示す方法 フィッシャー情報量に基づくクラメル・ラオの不等式を用いる方法 完備十分統計量の理論を用いる方法</p>
+</div>
+</section>
+<section id="フィッシャー情報量" class="level4" data-number="4.1.3">
+<h4 data-number="4.1.3" class="anchored" data-anchor-id="フィッシャー情報量"><span class="header-section-number">4.1.3</span> フィッシャー情報量</h4>
+<p><span class="math inline">\(X = (X_1, \dots, X_n)\)</span>の同時密度関数あるいは同時確率関数を<span class="math inline">\(f(x, \theta)\)</span>で表す。 ここで、<span class="math inline">\(\theta\)</span>は1次元のパラメータとする。 このとき<span class="math inline">\(\theta\)</span>に関するフィッシャー情報量<span class="math inline">\(I_n(\theta)\)</span>は次式で定義される。 <span class="math display">\[\begin{aligned}
+    I_n(\theta) &amp; = E_{\theta} \qty [\qty (\pdv{\log f(x, \theta)}{\theta})^2]                        \\
+                &amp; = \int \qty (\frac{\pdv{\theta} f(x, \theta)}{f(x, \theta)}) ^2 f(x, \theta) \dd{x} \\
+                &amp; = \int \frac{\qty (\pdv{\theta} f(x, \theta))^2}{f(x, \theta)} \dd{x}
+  \end{aligned}\]</span></p>
+<p><span class="math inline">\(X_1, \dots, X_n\)</span>が独立同一分布に従うときには <span class="math display">\[I_n(\theta) = nI_1(\theta)\]</span> となる。</p>
+</section>
+<section id="クラメルラオの不等式" class="level4" data-number="4.1.4">
+<h4 data-number="4.1.4" class="anchored" data-anchor-id="クラメルラオの不等式"><span class="header-section-number">4.1.4</span> クラメル・ラオの不等式</h4>
+<p>不偏推定量の分散とフィッシャー情報量の間には次の不等式が成立する。 <span class="math inline">\(\hat{\theta}\)</span>を<span class="math inline">\(\theta\)</span>の不偏推定量とする。このとき <span class="math display">\[Var_{\theta} \qty [\hat{\theta}] \geq \frac{1}{I_n(\theta)}\]</span></p>
+</section>
+<section id="不偏推定量がumvuであることを示す" class="level4" data-number="4.1.5">
+<h4 data-number="4.1.5" class="anchored" data-anchor-id="不偏推定量がumvuであることを示す"><span class="header-section-number">4.1.5</span> 不偏推定量がUMVUであることを示す</h4>
+<section id="フィッシャー情報量に基づくクラメルラオの不等式を用いる方法" class="level5" data-number="4.1.5.1">
+<h5 data-number="4.1.5.1" class="anchored" data-anchor-id="フィッシャー情報量に基づくクラメルラオの不等式を用いる方法"><span class="header-section-number">4.1.5.1</span> フィッシャー情報量に基づくクラメル・ラオの不等式を用いる方法</h5>
+<p>不偏推定量<span class="math inline">\(\hat{\theta}^{*}\)</span>が <span class="math display">\[Var_{\theta} \qty [\hat{\theta}^{*}] = \frac{1}{I_n(\theta)}, \quad \forall \theta\]</span> を満たせば、<span class="math inline">\(\hat{\theta}^{*}\)</span>はUMVUである。</p>
+</section>
+<section id="完備十分統計量の理論を用いる方法" class="level5" data-number="4.1.5.2">
+<h5 data-number="4.1.5.2" class="anchored" data-anchor-id="完備十分統計量の理論を用いる方法"><span class="header-section-number">4.1.5.2</span> 完備十分統計量の理論を用いる方法</h5>
+<p><span class="math inline">\(T\)</span>を完備十分統計量とする。このとき<span class="math inline">\(T\)</span>の関数である不偏推定量<span class="math inline">\(\delta^{*}(T)\)</span>は一意的に定まり <span class="math inline">\(\delta^{*}(T)\)</span>はUMVUとなる。 また、任意の不偏推定量を<span class="math inline">\(\hat{\theta}\)</span>とするとき <span class="math inline">\(E[\hat{\theta} | T]\)</span>は<span class="math inline">\(\delta^{*}(T)\)</span>に一致する。</p>
+<p>以上のことは次のように確かめられる。 <span class="math inline">\(\hat{\theta}\)</span>を不偏推定量とし、<span class="math inline">\(T(X)\)</span>を（一般の）十分統計量とする。 <span class="math display">\[\hat{\theta}^{*}(t) = E \qty [\hat{\theta}(X) | T(X) = t]\]</span> とおくと、期待値の繰り返しの公式により、 <span class="math display">\[\theta = E_{\theta} \qty [\hat{\theta}(X)] = E_{\theta}^{T} \qty [E [\hat{\theta}|T]] = E_{\theta}^{T} \qty [\hat{\theta}^{*}(T)]\]</span> となるから、<span class="math inline">\(\hat{\theta}^{*}(T)\)</span>も不偏推定量であることがわかる。 そしてラオ・ブラックウェルの定理により、<span class="math inline">\(\hat{\theta}^{*}(T)\)</span>と<span class="math inline">\(\hat{\theta}\)</span>が一致しない限り <span class="math inline">\(Var_{\theta} \qty [\hat{\theta}^{*}(T)] &lt; Var_{\theta} \qty [\hat{\theta}]\)</span> となる。 <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>次に、<span class="math inline">\(T\)</span>を完備十分統計量とする。同様に <span class="math display">\[\hat{\theta}^{*}(t) = E \qty [\hat{\theta}(X) | T(X) = t]\]</span> とおく。 ここで、<span class="math inline">\(\tilde{\theta}\)</span>をほかの任意の不偏推定量とする。 <span class="math inline">\(\tilde{\theta}\)</span>にラオ・ブラックウェルの定理を応用して <span class="math display">\[\tilde{\theta}^{*}(t) = E \qty [\tilde{\theta}(X) | T(X) = t]\]</span> とおく。 このとき、<span class="math inline">\(Var_{\theta} [\tilde{\theta}] \geq Var_{\theta} [\tilde{\theta}^{*}]\)</span>である。 ところで、<span class="math inline">\(g(T) = \hat{\theta}^{*}(T) - \tilde{\theta}^{*}(T)\)</span>とおくと、 <span class="math display">\[E_{\theta} \qty [g(T)] = E_{\theta} \qty [\hat{\theta}^{*}(T) - \tilde{\theta}^{*}(T)] = \theta - \theta = 0, \quad \forall \theta\]</span> となる。したがって完備性の定義より<span class="math inline">\(g(T) \equiv 0\)</span>すなわち<span class="math inline">\(\hat{\theta}^{*}(T) \equiv \tilde{\theta}^{*}(T)\)</span>でなければならない。 このとき、<span class="math inline">\(Var_{\theta} \qty [\tilde{\theta}^{*}] = Var_{\theta} \qty [\hat{\theta}^{*}]\)</span>となるから、 <span class="math inline">\(Var_{\theta} \qty [\tilde{\theta}] \geq Var_{\theta} \qty [\hat{\theta}^{*}]\)</span>となることが示された。 <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+</section>
+</section>
+</section>
+</section>
+<section id="最尤推定量" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="最尤推定量"><span class="header-section-number">5</span> 最尤推定量</h2>
+<section id="多項分布-1" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="多項分布-1"><span class="header-section-number">5.1</span> 多項分布</h3>
+<p>対数尤度関数は <span class="math display">\[l(p_1, p_2, \dots, p_k) = x_1 \log p_1 + x_2 \log p_2 + \dots x_k \log p_k + const.\]</span></p>
+<p>これを、<span class="math inline">\(p_1 + p_2 + \dots + p_k = 1\)</span>の条件の下で最大化する<span class="math inline">\(p_i\)</span>を見つける。 Lagrangeの未定乗数<span class="math inline">\(\lambda\)</span>を用いて、関数 <span class="math display">\[\tilde{l}(p_1, p_2, \dots, p_k, \lambda)
+  = x_1 \log p_1 + x_2 \log p_2 + \dots x_k \log p_k - \lambda (p_1 + p_2 + \dots + p_k - 1)\]</span> を定義する。これをパラメータで微分したものがゼロという条件から <span class="math display">\[\pdv{\tilde{l}}{p_i} = \frac{x_i}{p_i} - \lambda = 0\]</span> という式が得られる。これより <span class="math display">\[\hat{p}_i = \frac{x_i}{\lambda}\]</span> が得られ、条件<span class="math inline">\(p_1 + p_2 + \dots + p_k = 1\)</span>から <span class="math display">\[\lambda = n\]</span> がわかる。以上から、<span class="math inline">\(p_i\)</span>の最尤推定量は <span class="math display">\[\hat{p_i} = \frac{x_i}{n}\]</span> となる。</p>
+</section>
+</section>
+<section id="正規分布に関する検定" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="正規分布に関する検定"><span class="header-section-number">6</span> 正規分布に関する検定</h2>
+<section id="sec:2samples_mean_test_unknown_variance" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="sec:2samples_mean_test_unknown_variance"><span class="header-section-number">6.1</span> 2標本の平均の検定（分散が未知の場合）</h3>
+<p>分散<span class="math inline">\(\sigma_{A}^2\)</span>と<span class="math inline">\(\sigma_{B}^2\)</span>は未知とする。 各群の標本分散 <span class="math display">\[\begin{aligned}
+    s_{A}^2 = \frac{1}{n_{A} - 1} \sum_{i = 1}^{n_A} (X_{Ai} - \bar{X}_{A})^2 \\
+    s_{B}^2 = \frac{1}{n_{B} - 1} \sum_{i = 1}^{n_B} (X_{Bi} - \bar{X}_{B})^2
+  \end{aligned}\]</span> で<span class="math inline">\(\sigma_{A}^2\)</span>と<span class="math inline">\(\sigma_{B}^2\)</span>を推定する。 共通の母分散<span class="math inline">\(\sigma_{A}^2 = \sigma_{B}^2 = \sigma^2\)</span>を仮定すると、 2つの群をプールした標本分散 <span class="math display">\[s^2 = \frac{(n_{A} - 1) s_{A}^2 + (n_{B} - 1) s_{B}^2}{n_{A} + n_{B} - 2}\]</span> <span class="math inline">\(\sigma^2\)</span>を推定する。 <span class="math inline">\(\frac{(n_{A} + n_{B} - 2) s^2}{\sigma^2}\)</span>は自由度<span class="math inline">\((n_{A} + n_{B} - 2)\)</span>のカイ2乗分布に従う。 <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> 共通の母分散を仮定すると<span class="math inline">\(\bar{X}_{A} - \bar{X}_{B}\)</span>と<span class="math inline">\(s^2\)</span>は互いに独立であるから、 帰無仮説<span class="math inline">\(H_0:\delta = \delta_0\)</span>のもとで、検定統計量 <span class="math display">\[T = \frac{ \bar{X}_{A} - \bar{X}_{B} - \delta_{0}}{ s \sqrt{ \frac{1}{n_{A}} + \frac{1}{n_{B}}}}\]</span> 自由度<span class="math inline">\((n_{A} + n_{B} - 2)\)</span>の<span class="math inline">\(t\)</span>分布に従う。</p>
+</section>
+<section id="元配置分散分析" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="元配置分散分析"><span class="header-section-number">6.2</span> 1元配置分散分析</h3>
+<p>モデル <span class="math display">\[y_{ij} \sim N(\mu(A_i),\sigma^2)\]</span></p>
+<p>一般平均 <span class="math display">\[\mu = \frac{1}{a} \sum_{i = 1}^{a} \mu (A_i)\]</span></p>
+<p>因子の効果 <span class="math display">\[\alpha_i = \mu (A_i) - \mu\]</span></p>
+<p>このとき、 <span class="math display">\[y_{ij} = \mu + \alpha_i + \epsilon_{ij}, \quad \epsilon_{ij} \sim N(0, \sigma^2)\]</span> と書ける。</p>
+<p>帰無仮説　<span class="math inline">\(H_0: \alpha_1 = \cdots = \alpha_a = 0\)</span><br>
+対立仮説　<span class="math inline">\(H_1:\)</span> =が少なくとも1つは成り立たない<br>
+この検定に<strong>分散分析</strong>を用いる</p>
+<p>総平方和 <span class="math display">\[{
+    S_T = \sum_{i =1}^{a} \sum_{j=1}^{n} (y_{ij}- \bar{y})^2
+    = \sum_{i =1}^{a} \sum_{j=1}^{n} y_{ij}^{2} - an \bar{y}^{2}, \quad 自由度 \phi_T = an -1
+  }\]</span></p>
+<p>水準間平方和 <span class="math display">\[{
+    S_A = \sum_{i =1}^{a} \sum_{j=1}^{n} (\bar{y}_{A_i}- \bar{y})^2
+    = n \sum_{i =1}^{a}  (\bar{y}_{A_i}- \bar{y})^2
+    = n \sum_{i =1}^{a} \bar{y}_{A_i}^{2} - an \bar{y}^{2} , \quad 自由度 \phi_A = a -1
+  }\]</span></p>
+<p>誤差平方和 <a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> <span class="math display">\[{
+    S_E = \sum_{i =1}^{a} \sum_{j=1}^{n} (y_{ij}- \bar{y}_{A_i})^2 = S_{T} - S_{A} , \quad 自由度 \phi_E = a (n-1)
+  }\]</span></p>
+<p>帰無仮説が成り立つとき、 <span class="math display">\[{
+    F = \frac{V_A}{V_E} = \frac{S_A / \phi_A}{S_E / \phi_E}
+  }\]</span> が自由度<span class="math inline">\((\phi_A,\phi_E)\)</span>のF分布に従う。これから、F値を求め、<span class="math inline">\(H_0\)</span>を検定する。<br>
+帰無仮説のもとで、 <span class="math display">\[\begin{aligned}
+  \frac{\bar{y}_{A_i} - \mu(A_i)}{\sigma / \sqrt{n}} \sim N(0, 1)                \\
+  \frac{S_{E}}{\sigma^2} = \phi_{E} \frac{V_{E}}{\sigma^2} \sim \chi^2(\phi_{E}) \\
+\end{aligned}\]</span> が成り立ち、<span class="math inline">\(\bar{y}_{A_i}\)</span>と<span class="math inline">\(V_{E}\)</span>は独立であるから <span class="math display">\[\frac{\frac{\bar{y}_{A_i} - \mu(A_i)}{\sigma / \sqrt{n}}}{\sqrt{V_{E} / \sigma^2}}
+  = \frac{\bar{y}_{A_i} - \mu(A_i)}{\sqrt{V_{E}/n}} \sim t(\phi_{E})\]</span> となる。以上から、 平均<span class="math inline">\(\mu (A_i)\)</span>の点推定 <span class="math display">\[{
+    \hat{\mu} (A_i) = \bar{y}_{A_i}
+  }\]</span> 平均<span class="math inline">\(\mu (A_i)\)</span>の95%信頼区間 <span class="math display">\[{
+    \bar{y}_{A_i} \pm t_{0.025} (\phi_E) \sqrt{V_E / n}
+  }\]</span></p>
+</section>
+</section>
+<section id="デルタ法" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="デルタ法"><span class="header-section-number">7</span> デルタ法</h2>
+<p>確率変数<span class="math inline">\(X\)</span>について、平均と分散が <span class="math display">\[E \qty[X] = \mu_{x}, \quad V \qty[X] = \sigma_{x}^2\]</span> のようにわかっているとする。 このとき、<span class="math inline">\(Y = g(X)\)</span>と変数変換を行った確率変数<span class="math inline">\(Y\)</span>の平均や分散を近似的に求める。</p>
+<section id="分散の近似" class="level5" data-number="7.0.0.1">
+<h5 data-number="7.0.0.1" class="anchored" data-anchor-id="分散の近似"><span class="header-section-number">7.0.0.1</span> 分散の近似</h5>
+<p><span class="math inline">\(Y = g(X)\)</span>の1次までの展開は <span class="math display">\[Y = g(X) \approx g(\mu_{x}) + g'(\mu_{x})  (X - \mu_{x})\]</span> となり、この両辺の分散を取ることで <span class="math display">\[V[Y] \approx \qty (g'(\mu_{x}))^2 V \qty[X] = \qty (g'(\mu_{x}))^2 \sigma_{x}^2\]</span> となる。</p>
+</section>
+<section id="平均の近似" class="level5" data-number="7.0.0.2">
+<h5 data-number="7.0.0.2" class="anchored" data-anchor-id="平均の近似"><span class="header-section-number">7.0.0.2</span> 平均の近似</h5>
+<p><span class="math inline">\(Y = g(X)\)</span>の2次までの展開は <span class="math display">\[Y = g(X) \approx g(\mu_{x}) + g'(\mu_{x})  (X - \mu_{x})
+  + \frac{1}{2} g^{''}(\mu_{x}) (X - \mu_{x})^2\]</span> となるから、この両辺の平均をとることで <span class="math display">\[E \qty[Y] \approx g(\mu_{x}) + \frac{1}{2} g^{''}(\mu_{x}) V \qty[X]
+  = g(\mu_{x}) + \frac{1}{2} g^{''}(\mu_{x}) \sigma_{x}^2\]</span> となる。</p>
+</section>
+</section>
+<section id="指数分布族" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="指数分布族"><span class="header-section-number">8</span> 指数分布族</h2>
+<p>(<span class="math inline">\(k\)</span>母数)指数型分布族の密度関数 <span class="math display">\[f (x, \theta) = h(x) \exp \qty ( \sum_{j=1}^{k} T_j(x)\psi_{j}(\theta) - c(\theta))\]</span></p>
+<p>分解定理より、<span class="math inline">\(T_1, \cdots, T_k\)</span>が<span class="math inline">\(k\)</span>次元の十分統計量をなす。</p>
+</section>
+<section id="生存時間解析" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="生存時間解析"><span class="header-section-number">9</span> 生存時間解析</h2>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">脚注</h2>
+
+<ol>
+<li id="fn1"><p>1行目の等号は丁寧に書くと <span class="math display">\[
+P(X = x + x_0 | X \geq x_0)
+= \frac{P(X = x + x_0, X \geq x_0)}{P(X \geq x_0)}
+\]</span> であるが、 <span class="math inline">\(A = \{\xi | \xi = x + x_0\}, B = \{\xi | x \geq x_0\}\)</span> とすると <span class="math inline">\(A \subset B\)</span>であるので、<span class="math inline">\(A \cap B = A\)</span> つまり <span class="math inline">\(P(X = x + x_0, X \geq x_0) = P(X = x + x_0)\)</span> となり <a href="#eq-geometric_distribution_memorylessness_proof">式&nbsp;2</a> のようになる<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>言葉で表すと、<span class="math display">\[十分統計量で条件付けた推定量の二乗誤差 \leq 元の推定量の二乗誤差\]</span>となる。 つまり、十分統計量で条件付けると、推定量の二乗誤差は小さくなる。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>次のように言うこともできる。 任意の関数<span class="math inline">\(h_1(T), h_2(T)\)</span>に対し、 <span class="math display">\[E_{\theta} \qty [h_1(T)] = E_{\theta} \qty [h_1(T)], \forall \theta \Rightarrow h_1(T) \equiv h_2(T)\]</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>つまり、十分統計量で条件付けた不偏推定量は条件付けない時と比べて分散が小さくなる。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>任意の不偏推定量<span class="math inline">\(\hat{\theta}\)</span>を完備十分統計量で条件付けると、 条件付ける前の不偏推定量がどんなものであってもある不偏推定量<span class="math inline">\(\hat{\theta}^{*}\)</span>になる。 <span class="math inline">\(\hat{\theta}^{*}\)</span>は条件付けないときの不偏推定量と比べて分散が小さくなる。 つまり、任意の不偏推定量より分散が小さくなる。<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><span class="math inline">\(X \sim \chi^2(n)\)</span>のとき、<span class="math inline">\(E \qty[X/n] = 1, V \qty [X/n] = \frac{2}{n}\)</span>となる。 つまり、自由度が大きい方が分散が小さくなる。 以上から、共通の分散を仮定しているとき、<span class="math inline">\(s_{A}^2\)</span>(自由度<span class="math inline">\(n_{A} - 1\)</span>)や<span class="math inline">\(s_{B}^2\)</span>(自由度<span class="math inline">\(n_{B} - 1\)</span>)より <span class="math inline">\(s^2\)</span>(自由度<span class="math inline">\(n_{A} + n_{B} - 2\)</span>)を<span class="math inline">\(\sigma^2\)</span>の推定量として使用したほうが分散が小さくなって良いことがわかる。<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><span class="math inline">\(V_{E} = \frac{S_{E}}{\phi_{E}}\)</span>は<a href="#sec:2samples_mean_test_unknown_variance" data-reference-type="ref" data-reference="sec:2samples_mean_test_unknown_variance">6.1</a>でのプールした標本分散に対応する量である。<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "コピーしました");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "コピーしました");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

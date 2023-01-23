@@ -1,0 +1,25 @@
+project: 
+  type: website
+  output-dir: _output
+  
+
+website: 
+  title: "データ分析情報まとめ"
+  navbar: 
+    left: 
+      - href: index.md
+        text: Home
+  sidebar: 
+    contents: auto
+
+format: 
+  html: 
+    theme: flatly
+    toc: true
+    lang: ja
+    css: _styles/style.css
+    bibliography: references.bib
+
+execute: 
+  cache: true
+  freeze: auto

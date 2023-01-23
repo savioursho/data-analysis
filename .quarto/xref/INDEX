@@ -1,0 +1,111 @@
+{
+  "data-analysis-informations.md": {
+    "data-analysis-informations.html": "243c76a4"
+  },
+  "resources/001-peing.md": {
+    "001-peing.html": "dc34f09f"
+  },
+  "resources/002-twitter.md": {
+    "002-twitter.html": "fa22b41f"
+  },
+  "resources/003-twitter.md": {
+    "003-twitter.html": "e9e53596"
+  },
+  "EDA.qmd": {
+    "EDA.html": "0933d287",
+    "EDA.pptx": "628e9c99"
+  },
+  "logical-thinking.qmd": {
+    "logical-thinking.html": "81e67e5a"
+  },
+  "examples/seriation/seriation.ipynb": {
+    "seriation.html": "e1ec9087"
+  },
+  "EDA/index.qmd": {
+    "index.html": "04306608"
+  },
+  "EDA/R-for-data-science.qmd": {
+    "R-for-data-science.html": "858233ff"
+  },
+  "EDA/seriation/seriation.ipynb": {
+    "seriation.html": "8ee05285"
+  },
+  "probrem-solving/index.qmd": {
+    "index.html": "763f175e"
+  },
+  "01-EDA/index.qmd": {
+    "index.html": "888be302"
+  },
+  "01-EDA/R-for-data-science.qmd": {
+    "R-for-data-science.html": "8543412d"
+  },
+  "01-EDA/seriation/seriation.ipynb": {
+    "seriation.html": "dce0e7d5"
+  },
+  "02-probrem-solving/index.qmd": {
+    "index.html": "22a173d6"
+  },
+  "index.md": {
+    "index.html": "25cb98f4"
+  },
+  "02-probrem-solving/professional-problem-solving-skills-and-techniques.qmd": {
+    "professional-problem-solving-skills-and-techniques.html": "c87d7e59"
+  },
+  "02-probrem-solving/professional-problem-solving-skills-and-techniques/01-thinking.qmd": {
+    "01-thinking.html": "518bcfb6"
+  },
+  "02-probrem-solving/professional-problem-solving-skills-and-techniques/00-preface.qmd": {
+    "00-preface.html": "f3eef66f"
+  },
+  "02-probrem-solving/professional-problem-solving-skills-and-techniques/index.qmd": {
+    "index.html": "83cc6ea6"
+  },
+  "02-probrem-solving/professional-problem-solving-skills-and-techniques/02-thechniques.qmd": {
+    "02-thechniques.html": "3e4eb8c4"
+  },
+  "03-statistics/causal-inference/imdex.qmd": {
+    "imdex.html": "44b9f93a"
+  },
+  "03-statistics/regression-analysis/index.qmd": {
+    "index.html": "5a5181da"
+  },
+  "03-statistics/index.qmd": {
+    "index.html": "29f3e7de"
+  },
+  "03-statistics/causal-inference/index.qmd": {
+    "index.html": "c7969f6d"
+  },
+  "03-statistics/regression-analysis/heteroskedasticity.qmd": {
+    "heteroskedasticity.html": "2ff4fda4"
+  },
+  "03-statistics/mathematical-statistics/index.md": {
+    "index.html": "a29ad45e"
+  },
+  "03-statistics/mathematical-statistics/index.qmd": {
+    "index.html": "41284068"
+  },
+  "04-kaggle/index.qmd": {
+    "index.html": "0e6b7fed"
+  },
+  "05-modeling/all-analytical-models/index.qmd": {
+    "index.html": "4379c47c"
+  },
+  "05-modeling/all-analytical-models/part1.qmd": {
+    "part1.html": "e6218caf"
+  },
+  "05-modeling/index.qmd": {
+    "index.html": "4d6340b0"
+  },
+  "06-machine-learning/index.qmd": {
+    "index.html": "1ba5778d"
+  },
+  "06-machine-learning/sklearn/index.qmd": {
+    "index.html": "3d9e9163"
+  },
+  "06-machine-learning/sklearn/utils.qmd": {
+    "utils.html": "fbe649b5"
+  },
+  "06-machine-learning/LightGBM/index.qmd": {
+    "index.html": "1bade533"
+  }
+}
