@@ -107,5 +107,8 @@
   },
   "06-machine-learning/LightGBM/index.qmd": {
     "index.html": "1bade533"
+  },
+  "06-machine-learning/sklearn/ensemble.qmd": {
+    "ensemble.html": "7eef0c50"
   }
 }
