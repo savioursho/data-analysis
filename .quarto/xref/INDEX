@@ -110,5 +110,20 @@
   },
   "06-machine-learning/sklearn/ensemble.qmd": {
     "ensemble.html": "7eef0c50"
+  },
+  "07-data-handling/index.qmd": {
+    "index.html": "7e05bbd0"
+  },
+  "07-data-handling/polars/index.qmd": {
+    "index.html": "5398299d"
+  },
+  "07-data-handling/polars/user-guide/index.qmd": {
+    "index.html": "0975bce6"
+  },
+  "07-data-handling/polars/user-guide/getting-startied.qmd": {
+    "getting-startied.html": "55e38495"
+  },
+  "06-machine-learning/feature-engineering/index.qmd": {
+    "index.html": "91f152e0"
   }
 }

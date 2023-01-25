@@ -20,6 +20,8 @@ format:
     lang: ja
     css: _styles/style.css
     bibliography: references.bib
+    code-block-bg: true
+    code-line-numbers: true
 
 execute: 
   cache: true

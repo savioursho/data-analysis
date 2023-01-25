@@ -1,0 +1,4531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>データ分析情報まとめ – getting-startied</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon_io/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "一致なし",
+    "search-matching-documents-text": "一致した文書",
+    "search-copy-link-title": "検索へのリンクをコピー",
+    "search-hide-matches-text": "追加の検索結果を非表示",
+    "search-more-match-text": "追加の検索結果",
+    "search-more-matches-text": "追加の検索結果",
+    "search-clear-button-title": "消去",
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "検索"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../_styles/style.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">データ分析情報まとめ</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../04-kaggle/index.html" class="sidebar-item-text sidebar-link">Kaggle</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">EDA</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../01-EDA/R-for-data-science.html" class="sidebar-item-text sidebar-link">R for Data Science Exploratory Data Analysis</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Seriation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../01-EDA/seriation/seriation.html" class="sidebar-item-text sidebar-link">Seriation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">データハンドリング</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../07-data-handling/polars/index.html" class="sidebar-item-text sidebar-link">polars</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../07-data-handling/polars/user-guide/index.html" class="sidebar-item-text sidebar-link">User Guide</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../07-data-handling/polars/user-guide/getting-startied.html" class="sidebar-item-text sidebar-link active">Getting started</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">問題解決</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../02-probrem-solving/professional-problem-solving-skills-and-techniques/index.html" class="sidebar-item-text sidebar-link">問題解決プロフェッショナル 「思考と技術」</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../02-probrem-solving/professional-problem-solving-skills-and-techniques/00-preface.html" class="sidebar-item-text sidebar-link">序文</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../02-probrem-solving/professional-problem-solving-skills-and-techniques/01-thinking.html" class="sidebar-item-text sidebar-link">第1章 思考編</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../02-probrem-solving/professional-problem-solving-skills-and-techniques/02-thechniques.html" class="sidebar-item-text sidebar-link">第2章 技術編</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">機械学習</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../06-machine-learning/LightGBM/index.html" class="sidebar-item-text sidebar-link">LightGBM</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../06-machine-learning/feature-engineering/index.html" class="sidebar-item-text sidebar-link">特徴量エンジニアリング</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">scikit-learn</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../06-machine-learning/sklearn/ensemble.html" class="sidebar-item-text sidebar-link">sklearn.ensemble</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../06-machine-learning/sklearn/utils.html" class="sidebar-item-text sidebar-link">便利な関数</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">統計学</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../03-statistics/causal-inference/index.html" class="sidebar-item-text sidebar-link">因果推論</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../03-statistics/mathematical-statistics/index.html" class="sidebar-item-text sidebar-link">数理統計学</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">回帰分析</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../03-statistics/regression-analysis/heteroskedasticity.html" class="sidebar-item-text sidebar-link">不均一分散</a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">目次</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick start</a></li>
+  <li><a href="#lazy-quick-start" id="toc-lazy-quick-start" class="nav-link" data-scroll-target="#lazy-quick-start">Lazy quick start</a></li>
+  <li><a href="#polars-quick-exploration-guide" id="toc-polars-quick-exploration-guide" class="nav-link" data-scroll-target="#polars-quick-exploration-guide">Polars quick exploration guide</a>
+  <ul class="collapse">
+  <li><a href="#installation-and-import" id="toc-installation-and-import" class="nav-link" data-scroll-target="#installation-and-import">Installation and Import</a></li>
+  <li><a href="#object-creation" id="toc-object-creation" class="nav-link" data-scroll-target="#object-creation">Object creation</a></li>
+  <li><a href="#viewing-data" id="toc-viewing-data" class="nav-link" data-scroll-target="#viewing-data">Viewing data</a></li>
+  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions">Expressions</a></li>
+  <li><a href="#combining-dataframes" id="toc-combining-dataframes" class="nav-link" data-scroll-target="#combining-dataframes">Combining dataframes</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p><a href="https://pola-rs.github.io/polars-book/user-guide/quickstart/intro.html">Getting started - Polars - User Guide</a></p>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>$ pip install polars</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="quick-start" class="level3">
+<h3 class="anchored" data-anchor-id="quick-start">Quick start</h3>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> pl.read_csv(<span class="st">"https://j.mp/iriscsv"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>df.head() <span class="co"># html format</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5, 5)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+sepal_length
+</th>
+<th>
+sepal_width
+</th>
+<th>
+petal_length
+</th>
+<th>
+petal_width
+</th>
+<th>
+species
+</th>
+</tr>
+<tr>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+str
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+5.1
+</td>
+<td>
+3.5
+</td>
+<td>
+1.4
+</td>
+<td>
+0.2
+</td>
+<td>
+"setosa"
+</td>
+</tr>
+<tr>
+<td>
+4.9
+</td>
+<td>
+3.0
+</td>
+<td>
+1.4
+</td>
+<td>
+0.2
+</td>
+<td>
+"setosa"
+</td>
+</tr>
+<tr>
+<td>
+4.7
+</td>
+<td>
+3.2
+</td>
+<td>
+1.3
+</td>
+<td>
+0.2
+</td>
+<td>
+"setosa"
+</td>
+</tr>
+<tr>
+<td>
+4.6
+</td>
+<td>
+3.1
+</td>
+<td>
+1.5
+</td>
+<td>
+0.2
+</td>
+<td>
+"setosa"
+</td>
+</tr>
+<tr>
+<td>
+5.0
+</td>
+<td>
+3.6
+</td>
+<td>
+1.4
+</td>
+<td>
+0.2
+</td>
+<td>
+"setosa"
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="bu">print</span>(df.head()) <span class="co"># print format</span></span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>shape: (5, 5)
+┌──────────────┬─────────────┬──────────────┬─────────────┬─────────┐
+│ sepal_length ┆ sepal_width ┆ petal_length ┆ petal_width ┆ species │
+│ ---          ┆ ---         ┆ ---          ┆ ---         ┆ ---     │
+│ f64          ┆ f64         ┆ f64          ┆ f64         ┆ str     │
+╞══════════════╪═════════════╪══════════════╪═════════════╪═════════╡
+│ 5.1          ┆ 3.5         ┆ 1.4          ┆ 0.2         ┆ setosa  │
+│ 4.9          ┆ 3.0         ┆ 1.4          ┆ 0.2         ┆ setosa  │
+│ 4.7          ┆ 3.2         ┆ 1.3          ┆ 0.2         ┆ setosa  │
+│ 4.6          ┆ 3.1         ┆ 1.5          ┆ 0.2         ┆ setosa  │
+│ 5.0          ┆ 3.6         ┆ 1.4          ┆ 0.2         ┆ setosa  │
+└──────────────┴─────────────┴──────────────┴─────────────┴─────────┘</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>(df.<span class="bu">filter</span>(pl.col(<span class="st">"sepal_length"</span>) <span class="op">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    .groupby(<span class="st">"species"</span>, maintain_order<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    .agg(pl.<span class="bu">all</span>().<span class="bu">sum</span>()))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 5)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+species
+</th>
+<th>
+sepal_length
+</th>
+<th>
+sepal_width
+</th>
+<th>
+petal_length
+</th>
+<th>
+petal_width
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"setosa"
+</td>
+<td>
+116.9
+</td>
+<td>
+81.7
+</td>
+<td>
+33.2
+</td>
+<td>
+6.1
+</td>
+</tr>
+<tr>
+<td>
+"versicolor"
+</td>
+<td>
+281.9
+</td>
+<td>
+131.8
+</td>
+<td>
+202.9
+</td>
+<td>
+63.3
+</td>
+</tr>
+<tr>
+<td>
+"virginica"
+</td>
+<td>
+324.5
+</td>
+<td>
+146.2
+</td>
+<td>
+273.1
+</td>
+<td>
+99.6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="lazy-quick-start" class="level3">
+<h3 class="anchored" data-anchor-id="lazy-quick-start">Lazy quick start</h3>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># 実行されない</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>(pl.read_csv(<span class="st">"https://j.mp/iriscsv"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>    .lazy()</span>
+<span id="cb6-4"><a href="#cb6-4"></a>    .<span class="bu">filter</span>(pl.col(<span class="st">"sepal_length"</span>) <span class="op">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    .groupby(<span class="st">"species"</span>, maintain_order<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    .agg(pl.<span class="bu">all</span>().<span class="bu">sum</span>())</span>
+<span id="cb6-7"><a href="#cb6-7"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<i>naive plan: (run <b>LazyFrame.describe_optimized_plan()</b> to see the optimized plan)</i>
+    <p></p>
+    <div>  Aggregate<p></p>     [col("sepal_length").sum(), col("sepal_width").sum(), col("petal_length").sum(), col("petal_width").sum()] BY [col("species")] FROM<p></p>        FILTER [(col("sepal_length")) &gt; (5i32)] FROM<p></p>    DF ["sepal_length", "sepal_width", "petal_length", "petal_width"]; PROJECT */5 COLUMNS; SELECTION: "None"<p></p><p></p></div>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># .collect()で実行される</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>(pl.read_csv(<span class="st">"https://j.mp/iriscsv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    .lazy()</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    .<span class="bu">filter</span>(pl.col(<span class="st">"sepal_length"</span>) <span class="op">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    .groupby(<span class="st">"species"</span>, maintain_order<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    .agg(pl.<span class="bu">all</span>().<span class="bu">sum</span>())</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    .collect()</span>
+<span id="cb7-8"><a href="#cb7-8"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 5)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+species
+</th>
+<th>
+sepal_length
+</th>
+<th>
+sepal_width
+</th>
+<th>
+petal_length
+</th>
+<th>
+petal_width
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"setosa"
+</td>
+<td>
+116.9
+</td>
+<td>
+81.7
+</td>
+<td>
+33.2
+</td>
+<td>
+6.1
+</td>
+</tr>
+<tr>
+<td>
+"versicolor"
+</td>
+<td>
+281.9
+</td>
+<td>
+131.8
+</td>
+<td>
+202.9
+</td>
+<td>
+63.3
+</td>
+</tr>
+<tr>
+<td>
+"virginica"
+</td>
+<td>
+324.5
+</td>
+<td>
+146.2
+</td>
+<td>
+273.1
+</td>
+<td>
+99.6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="polars-quick-exploration-guide" class="level2">
+<h2 class="anchored" data-anchor-id="polars-quick-exploration-guide">Polars quick exploration guide</h2>
+<p><a href="https://pola-rs.github.io/polars-book/user-guide/quickstart/quick-exploration-guide.html">Polars quick exploration guide - Polars - User Guide</a></p>
+<section id="installation-and-import" class="level3">
+<h3 class="anchored" data-anchor-id="installation-and-import">Installation and Import</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>pip install -U polars</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="object-creation" class="level3">
+<h3 class="anchored" data-anchor-id="object-creation">Object creation</h3>
+<section id="from-scratch" class="level4">
+<h4 class="anchored" data-anchor-id="from-scratch">From scratch</h4>
+<p><code>Series</code></p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>series <span class="op">=</span> pl.Series(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>    <span class="st">"a"</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb10-3"><a href="#cb10-3"></a>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>series</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5,)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>series <span class="op">=</span> pl.Series(</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb11-3"><a href="#cb11-3"></a>)</span>
+<span id="cb11-4"><a href="#cb11-4"></a>series</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5,)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="bu">type</span>(series)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>polars.internals.series.series.Series</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">isinstance</span>(series, pl.Series)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p><code>Dataframe</code></p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>dataframe <span class="op">=</span> pl.DataFrame({</span>
+<span id="cb16-2"><a href="#cb16-2"></a>    <span class="st">"integer"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb16-3"><a href="#cb16-3"></a>    <span class="st">"date"</span>:[</span>
+<span id="cb16-4"><a href="#cb16-4"></a>        (datetime(<span class="dv">2022</span>, <span class="dv">1</span>, <span class="dv">1</span>)),</span>
+<span id="cb16-5"><a href="#cb16-5"></a>        (datetime(<span class="dv">2022</span>, <span class="dv">1</span>, <span class="dv">2</span>)),</span>
+<span id="cb16-6"><a href="#cb16-6"></a>        (datetime(<span class="dv">2022</span>, <span class="dv">1</span>, <span class="dv">3</span>)),</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    ],</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    <span class="st">"float"</span>: [<span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>],</span>
+<span id="cb16-9"><a href="#cb16-9"></a>})</span>
+<span id="cb16-10"><a href="#cb16-10"></a>dataframe</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+integer
+</th>
+<th>
+date
+</th>
+<th>
+float
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+<td>
+2022-01-01 00:00:00
+</td>
+<td>
+4.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+2022-01-02 00:00:00
+</td>
+<td>
+5.0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+2022-01-03 00:00:00
+</td>
+<td>
+6.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="bu">type</span>(dataframe)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>polars.internals.dataframe.frame.DataFrame</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="bu">isinstance</span>(dataframe, pl.DataFrame)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="from-file" class="level4">
+<h4 class="anchored" data-anchor-id="from-file">From file</h4>
+<section id="csv" class="level5">
+<h5 class="anchored" data-anchor-id="csv">csv</h5>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>dataframe.write_csv(<span class="st">"output.csv"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>df_csv <span class="op">=</span> pl.read_csv(<span class="st">"output.csv"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>df_csv</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+integer
+</th>
+<th>
+date
+</th>
+<th>
+float
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+str
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+<td>
+"2022-01-01T00:...
+</td>
+<td>
+4.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+"2022-01-02T00:...
+</td>
+<td>
+5.0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+"2022-01-03T00:...
+</td>
+<td>
+6.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>paarse dates</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df_csv_with_dates <span class="op">=</span> pl.read_csv(<span class="st">"output.csv"</span>, parse_dates<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>df_csv_with_dates</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+integer
+</th>
+<th>
+date
+</th>
+<th>
+float
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+1
+</td>
+<td>
+2022-01-01 00:00:00
+</td>
+<td>
+4.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+2022-01-02 00:00:00
+</td>
+<td>
+5.0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+2022-01-03 00:00:00
+</td>
+<td>
+6.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="viewing-data" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-data">Viewing data</h3>
+<p>We first create a <code>DataFrame</code> to work with.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>df <span class="op">=</span> pl.DataFrame({</span>
+<span id="cb24-2"><a href="#cb24-2"></a>    <span class="st">"a"</span>: np.arange(<span class="dv">0</span>, <span class="dv">8</span>),</span>
+<span id="cb24-3"><a href="#cb24-3"></a>    <span class="st">"b"</span>: np.random.rand(<span class="dv">8</span>),</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="st">"c"</span>: [</span>
+<span id="cb24-5"><a href="#cb24-5"></a>        datetime(<span class="dv">2022</span>, <span class="dv">12</span>, <span class="dv">1</span>) <span class="op">+</span> timedelta(days<span class="op">=</span>idx)</span>
+<span id="cb24-6"><a href="#cb24-6"></a>        <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)</span>
+<span id="cb24-7"><a href="#cb24-7"></a>    ],</span>
+<span id="cb24-8"><a href="#cb24-8"></a>    <span class="st">"d"</span>: [<span class="dv">1</span>, <span class="fl">2.0</span>, np.nan, np.nan, <span class="dv">0</span>, <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">42</span>, <span class="va">None</span>],</span>
+<span id="cb24-9"><a href="#cb24-9"></a>})</span>
+<span id="cb24-10"><a href="#cb24-10"></a>df</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>head</code></p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>df.head()</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>tail</code></p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>df.tail()</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>sample</code></p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>df.sample(n<span class="op">=</span><span class="dv">3</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (3, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><code>describe</code></p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>df.describe()</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (7, 5)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+describe
+</th>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+str
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"count"
+</td>
+<td>
+8.0
+</td>
+<td>
+8.0
+</td>
+<td>
+"8"
+</td>
+<td>
+8.0
+</td>
+</tr>
+<tr>
+<td>
+"null_count"
+</td>
+<td>
+0.0
+</td>
+<td>
+0.0
+</td>
+<td>
+"0"
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+"mean"
+</td>
+<td>
+3.5
+</td>
+<td>
+0.423857
+</td>
+<td>
+null
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+"std"
+</td>
+<td>
+2.44949
+</td>
+<td>
+0.260729
+</td>
+<td>
+null
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+"min"
+</td>
+<td>
+0.0
+</td>
+<td>
+0.142492
+</td>
+<td>
+"2022-12-01 00:...
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+"max"
+</td>
+<td>
+7.0
+</td>
+<td>
+0.945679
+</td>
+<td>
+"2022-12-08 00:...
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+"median"
+</td>
+<td>
+3.5
+</td>
+<td>
+0.324244
+</td>
+<td>
+null
+</td>
+<td>
+1.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="expressions" class="level3">
+<h3 class="anchored" data-anchor-id="expressions">Expressions</h3>
+<section id="select-statement" class="level4">
+<h4 class="anchored" data-anchor-id="select-statement">Select statement</h4>
+<p>select all columns</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>df.select(</span>
+<span id="cb29-2"><a href="#cb29-2"></a>    pl.col(<span class="st">"*"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="bu">print</span>(pl.col(<span class="st">"*"</span>))</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="bu">print</span>(<span class="bu">type</span>(pl.col(<span class="st">"*"</span>)))</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>*
+&lt;class 'polars.internals.expr.expr.Expr'&gt;</code></pre>
+</div>
+</div>
+<p>select specific columns</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>df.select(</span>
+<span id="cb32-2"><a href="#cb32-2"></a>    pl.col([<span class="st">"a"</span>, <span class="st">"b"</span>])</span>
+<span id="cb32-3"><a href="#cb32-3"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 2)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>df.select([</span>
+<span id="cb33-2"><a href="#cb33-2"></a>    pl.col(<span class="st">"a"</span>),</span>
+<span id="cb33-3"><a href="#cb33-3"></a>    pl.col(<span class="st">"b"</span>)</span>
+<span id="cb33-4"><a href="#cb33-4"></a>])</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 2)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>What if column names are duplicated?</p>
+<p>It raises exception.</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="cf">try</span>:</span>
+<span id="cb34-2"><a href="#cb34-2"></a>    df.select(</span>
+<span id="cb34-3"><a href="#cb34-3"></a>        pl.col([<span class="st">"a"</span>, <span class="st">"a"</span>])</span>
+<span id="cb34-4"><a href="#cb34-4"></a>    )</span>
+<span id="cb34-5"><a href="#cb34-5"></a><span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb34-6"><a href="#cb34-6"></a>    <span class="bu">print</span>(e)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Column with name: 'a' has more than one occurrences</code></pre>
+</div>
+</div>
+<p>exclude columns</p>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>df.select([</span>
+<span id="cb36-2"><a href="#cb36-2"></a>    pl.exclude(<span class="st">"a"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a>])</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+</tr>
+<tr>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+</tr>
+<tr>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+<tr>
+<td>
+0.486924
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="filter" class="level4">
+<h4 class="anchored" data-anchor-id="filter">Filter</h4>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>df.<span class="bu">filter</span>(</span>
+<span id="cb37-2"><a href="#cb37-2"></a>    pl.col(<span class="st">"c"</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    .is_between(</span>
+<span id="cb37-4"><a href="#cb37-4"></a>        datetime(<span class="dv">2022</span>, <span class="dv">12</span>, <span class="dv">2</span>), datetime(<span class="dv">2022</span>, <span class="dv">12</span>, <span class="dv">8</span>),</span>
+<span id="cb37-5"><a href="#cb37-5"></a>        closed <span class="op">=</span> <span class="st">"none"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    ),</span>
+<span id="cb37-7"><a href="#cb37-7"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (5, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>df.<span class="bu">filter</span>(</span>
+<span id="cb38-2"><a href="#cb38-2"></a>    (pl.col(<span class="st">"a"</span>) <span class="op">&lt;=</span> <span class="dv">3</span>) <span class="op">&amp;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    (pl.col(<span class="st">"d"</span>).is_not_nan())</span>
+<span id="cb38-4"><a href="#cb38-4"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (2, 4)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="with_columns" class="level4">
+<h4 class="anchored" data-anchor-id="with_columns">With_columns</h4>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>df.with_columns([</span>
+<span id="cb39-2"><a href="#cb39-2"></a>    pl.col(<span class="st">"b"</span>).<span class="bu">sum</span>().alias(<span class="st">"e"</span>),</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    (pl.col(<span class="st">"b"</span>) <span class="op">+</span> <span class="dv">42</span>).alias(<span class="st">"b+42"</span>),</span>
+<span id="cb39-4"><a href="#cb39-4"></a>])</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 6)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+<th>
+e
+</th>
+<th>
+b+42
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.945679
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.232926
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.638681
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.295667
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.296556
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.142492
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.351933
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+<td>
+3.390858
+</td>
+<td>
+42.486924
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="groupby" class="level4">
+<h4 class="anchored" data-anchor-id="groupby">Groupby</h4>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>df2 <span class="op">=</span> pl.DataFrame({</span>
+<span id="cb40-2"><a href="#cb40-2"></a>    <span class="st">"x"</span>: np.arange(<span class="dv">0</span>, <span class="dv">8</span>),</span>
+<span id="cb40-3"><a href="#cb40-3"></a>    <span class="st">"y"</span>: [<span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"X"</span>, <span class="st">"X"</span>],</span>
+<span id="cb40-4"><a href="#cb40-4"></a>})</span>
+<span id="cb40-5"><a href="#cb40-5"></a>df2</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 2)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+x
+</th>
+<th>
+y
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+str
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+"C"
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+"X"
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+"X"
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>df2.groupby(</span>
+<span id="cb41-2"><a href="#cb41-2"></a>    <span class="st">"y"</span>, maintain_order<span class="op">=</span><span class="va">True</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>).count()</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (4, 2)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+y
+</th>
+<th>
+count
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+u32
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"A"
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+"B"
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+"C"
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+"X"
+</td>
+<td>
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>What if <code>maintain_order=False</code></p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>df2.groupby(</span>
+<span id="cb42-2"><a href="#cb42-2"></a>    <span class="st">"y"</span>, maintain_order<span class="op">=</span><span class="va">False</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a>).count()</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (4, 2)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+y
+</th>
+<th>
+count
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+u32
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"A"
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+"C"
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+"X"
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td>
+"B"
+</td>
+<td>
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>df2.groupby(<span class="st">"y"</span>, maintain_order<span class="op">=</span><span class="va">True</span>).agg([</span>
+<span id="cb43-2"><a href="#cb43-2"></a>    pl.col(<span class="st">"*"</span>).count().alias(<span class="st">"count"</span>),</span>
+<span id="cb43-3"><a href="#cb43-3"></a>    pl.col(<span class="st">"*"</span>).<span class="bu">sum</span>().alias(<span class="st">"sum"</span>),</span>
+<span id="cb43-4"><a href="#cb43-4"></a>])</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (4, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+y
+</th>
+<th>
+count
+</th>
+<th>
+sum
+</th>
+</tr>
+<tr>
+<td>
+str
+</td>
+<td>
+u32
+</td>
+<td>
+i64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+"A"
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<td>
+"B"
+</td>
+<td>
+2
+</td>
+<td>
+7
+</td>
+</tr>
+<tr>
+<td>
+"C"
+</td>
+<td>
+1
+</td>
+<td>
+5
+</td>
+</tr>
+<tr>
+<td>
+"X"
+</td>
+<td>
+2
+</td>
+<td>
+13
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="combining-operations" class="level4">
+<h4 class="anchored" data-anchor-id="combining-operations">Combining operations</h4>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>df_x <span class="op">=</span> df.with_column(</span>
+<span id="cb44-2"><a href="#cb44-2"></a>    (pl.col(<span class="st">"a"</span>) <span class="op">*</span> pl.col(<span class="st">"b"</span>)).alias(<span class="st">"a * b"</span>)</span>
+<span id="cb44-3"><a href="#cb44-3"></a>).select([</span>
+<span id="cb44-4"><a href="#cb44-4"></a>    pl.<span class="bu">all</span>().exclude([<span class="st">"c"</span>, <span class="st">"d"</span>])</span>
+<span id="cb44-5"><a href="#cb44-5"></a>])</span>
+<span id="cb44-6"><a href="#cb44-6"></a>df_x</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 3)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+a * b
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+f64
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.945679
+</td>
+<td>
+0.0
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.232926
+</td>
+<td>
+0.232926
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.638681
+</td>
+<td>
+1.277361
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.295667
+</td>
+<td>
+0.887001
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.296556
+</td>
+<td>
+1.186223
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.142492
+</td>
+<td>
+0.712461
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.351933
+</td>
+<td>
+2.111597
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.486924
+</td>
+<td>
+3.408468
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="combining-dataframes" class="level3">
+<h3 class="anchored" data-anchor-id="combining-dataframes">Combining dataframes</h3>
+<section id="join" class="level4">
+<h4 class="anchored" data-anchor-id="join">Join</h4>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>df <span class="op">=</span> pl.DataFrame({<span class="st">"a"</span>: np.arange(<span class="dv">0</span>, <span class="dv">8</span>), </span>
+<span id="cb45-2"><a href="#cb45-2"></a>                   <span class="st">"b"</span>: np.random.rand(<span class="dv">8</span>), </span>
+<span id="cb45-3"><a href="#cb45-3"></a>                   <span class="st">"c"</span>: [datetime(<span class="dv">2022</span>, <span class="dv">12</span>, <span class="dv">1</span>) <span class="op">+</span> timedelta(days<span class="op">=</span>idx) <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8</span>)],</span>
+<span id="cb45-4"><a href="#cb45-4"></a>                   <span class="st">"d"</span>: [<span class="dv">1</span>, <span class="fl">2.0</span>, np.NaN, np.NaN, <span class="dv">0</span>, <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">42</span>, <span class="va">None</span>]</span>
+<span id="cb45-5"><a href="#cb45-5"></a>                  })</span>
+<span id="cb45-6"><a href="#cb45-6"></a></span>
+<span id="cb45-7"><a href="#cb45-7"></a>df2 <span class="op">=</span> pl.DataFrame({</span>
+<span id="cb45-8"><a href="#cb45-8"></a>                    <span class="st">"x"</span>: np.arange(<span class="dv">0</span>, <span class="dv">8</span>), </span>
+<span id="cb45-9"><a href="#cb45-9"></a>                    <span class="st">"y"</span>: [<span class="st">'A'</span>, <span class="st">'A'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'X'</span>, <span class="st">'X'</span>],</span>
+<span id="cb45-10"><a href="#cb45-10"></a>})</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a>df.join(</span>
+<span id="cb46-2"><a href="#cb46-2"></a>    df2, left_on<span class="op">=</span><span class="st">"a"</span>, right_on<span class="op">=</span><span class="st">"x"</span>,</span>
+<span id="cb46-3"><a href="#cb46-3"></a>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 5)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+<th>
+y
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+<td>
+str
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.76614
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.653994
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.207373
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.353114
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.698152
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.413338
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+<td>
+"C"
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.258704
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+<td>
+"X"
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.935968
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+<td>
+"X"
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="concat" class="level4">
+<h4 class="anchored" data-anchor-id="concat">Concat</h4>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>pl.concat([df, df2], how<span class="op">=</span><span class="st">"horizontal"</span>)</span></code><button title="コピー" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+
+    .dataframe td {
+        white-space: pre;
+    }
+
+    .dataframe td {
+        padding-top: 0;
+    }
+
+    .dataframe td {
+        padding-bottom: 0;
+    }
+
+    .dataframe td {
+        line-height: 95%;
+    }
+</style>
+<small>shape: (8, 6)</small><table class="dataframe table table-sm table-striped">
+
+<thead>
+<tr>
+<th>
+a
+</th>
+<th>
+b
+</th>
+<th>
+c
+</th>
+<th>
+d
+</th>
+<th>
+x
+</th>
+<th>
+y
+</th>
+</tr>
+<tr>
+<td>
+i64
+</td>
+<td>
+f64
+</td>
+<td>
+datetime[μs]
+</td>
+<td>
+f64
+</td>
+<td>
+i64
+</td>
+<td>
+str
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+0
+</td>
+<td>
+0.76614
+</td>
+<td>
+2022-12-01 00:00:00
+</td>
+<td>
+1.0
+</td>
+<td>
+0
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+0.653994
+</td>
+<td>
+2022-12-02 00:00:00
+</td>
+<td>
+2.0
+</td>
+<td>
+1
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+0.207373
+</td>
+<td>
+2022-12-03 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+2
+</td>
+<td>
+"A"
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td>
+0.353114
+</td>
+<td>
+2022-12-04 00:00:00
+</td>
+<td>
+NaN
+</td>
+<td>
+3
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+0.698152
+</td>
+<td>
+2022-12-05 00:00:00
+</td>
+<td>
+0.0
+</td>
+<td>
+4
+</td>
+<td>
+"B"
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td>
+0.413338
+</td>
+<td>
+2022-12-06 00:00:00
+</td>
+<td>
+-5.0
+</td>
+<td>
+5
+</td>
+<td>
+"C"
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+0.258704
+</td>
+<td>
+2022-12-07 00:00:00
+</td>
+<td>
+-42.0
+</td>
+<td>
+6
+</td>
+<td>
+"X"
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+0.935968
+</td>
+<td>
+2022-12-08 00:00:00
+</td>
+<td>
+null
+</td>
+<td>
+7
+</td>
+<td>
+"X"
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "コピーしました");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "コピーしました");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,167 @@
+# 特徴量エンジニアリング
+
+```{python}
+import numpy as np
+import polars as pl
+import seaborn as sns
+sns.set_theme(style="whitegrid")
+```
+
+## 数値特徴量の和と差
+
+### 境界が $y = -x$ のとき
+
+境界は $y = -x$ つまり、
+$y + x = 0$ であるから、
+$y + x$ という特徴量を作成することで、
+境界が軸に沿うようになり、
+決定木での分離が用意になる。
+そのことを以下で見ていく。
+
+
+格子点のデータを作成。
+$y = -x$ を境にクラスを分ける。
+
+```{python}
+x = np.linspace(-5, 5)
+y = np.linspace(-5, 5)
+
+x_mesh, y_mesh = np.meshgrid(x, y)
+
+df = pl.DataFrame({
+    "X":x_mesh.ravel(),
+    "Y":y_mesh.ravel(),
+})
+
+df = df.with_column(
+    (pl.col("Y") > (- pl.col("X"))).cast(pl.UInt8).alias("target")
+)
+df.head()
+```
+
+可視化
+
+```{python}
+#| fig-cap: "$y = -x$ を境に正解のクラスが変わるデータ。境界が軸に対して斜めであるため、決定木では深さが必要となる。"
+#| label: fig-1
+#| code-fold: true
+#| fig-cap-location: margin
+sns.relplot(
+    data=df,
+    x="X",
+    y="Y",
+    hue="target",
+    palette="tab10",
+    s=10,
+);
+```
+
+和と差を計算する
+
+```{python}
+df = df.with_columns([
+    (pl.col("X") + pl.col("Y")).alias("X+Y"),
+    (pl.col("X") - pl.col("Y")).alias("X-Y"),
+])
+```
+
+可視化
+```{python}
+#| fig-cap: "左は縦軸を`X+Y`にしたもの。右は縦軸を`X=Y`にしたもの。和 `X+Y` と元の変数 `X` の2次元では、境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。差`X=Y` と`X`の2次元では、境界が軸に沿っていないので、決定木の深さが必要となる。"
+#| label: fig-2
+#| code-fold: true
+#| fig-cap-location: margin
+sns.relplot(
+    data=df.melt(["X", "Y", "target"]),
+    x="X",
+    y="value",
+    col="variable",
+    hue="target",
+    palette="tab10",
+    s=10,
+);
+```
+
+
+```{python}
+#| fig-cap: "`X+Y` と `X-Y` の2次元では元の `X` と `Y` のデータを回転（と定数倍）した形になる。境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。"
+#| label: fig-3
+#| code-fold: true
+#| fig-cap-location: margin
+sns.relplot(
+    data=df,
+    x="X+Y",
+    y="X-Y",
+    hue="target",
+    palette="tab10",
+    s=10,
+);
+```
+
+
+### 境界が $y = 2 \sin (x)$ のとき
+
+データ作成
+
+```{python}
+x = np.linspace(-5, 5)
+y = np.linspace(-5, 5)
+
+x_mesh, y_mesh = np.meshgrid(x, y)
+
+df = pl.DataFrame({
+    "X":x_mesh.ravel(),
+    "Y":y_mesh.ravel(),
+})
+
+df = df.with_column(
+    (pl.col("Y") > 2 * np.sin(pl.col("X"))).cast(pl.UInt8).alias("target")
+)
+df.head()
+```
+
+可視化
+
+```{python}
+#| fig-cap: "$y = 2 \\sin(x)$ を境に正解のクラスが変わるデータ。"
+#| label: fig-4
+#| code-fold: true
+#| fig-cap-location: margin
+sns.relplot(
+    data=df,
+    x="X",
+    y="Y",
+    hue="target",
+    palette="tab10",
+    s=10,
+);
+```
+
+特徴量作成
+
+$z = y - 2 \sin(x)$ とする。
+
+
+```{python}
+df = df.with_column(
+    (pl.col("Y") - 2 * np.sin(pl.col("X"))).alias("Z")
+)
+df.head()
+```
+
+
+```{python}
+#| fig-cap: "$z = y - 2 \\sin(x)$ を特徴量として作成することで、境界が軸に沿うようになった。"
+#| label: fig-5
+#| code-fold: true
+#| fig-cap-location: margin
+sns.relplot(
+    data=df,
+    x="X",
+    y="Z",
+    hue="target",
+    palette="tab10",
+    s=10,
+);
+```
+
