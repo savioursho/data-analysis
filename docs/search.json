@@ -172,7 +172,7 @@
     "href": "06-machine-learning/sklearn/utils.html",
     "title": "データ分析情報まとめ",
     "section": "",
-    "text": "便利な関数\n\ncheck_cv\n_safe_indexing\nBunch"
+    "text": "便利な関数\n\ncheck_cv\n_safe_indexing\nBunch\nscikit-learn/validation.py at main · scikit-learn/scikit-learn"
   },
   {
     "objectID": "07-data-handling/index.html",
