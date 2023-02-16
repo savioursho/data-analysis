@@ -1,7 +1,6 @@
 project: 
   type: website
   output-dir: docs
-  
 
 website: 
   title: "データ分析情報まとめ"
@@ -22,6 +21,7 @@ format:
     bibliography: references.bib
     code-block-bg: true
     code-line-numbers: true
+    from: markdown+emoji
 
 execute: 
   cache: true
