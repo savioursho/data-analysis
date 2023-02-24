@@ -1,6 +1,18 @@
 R for Data Science Exploratory Data Analysis
 ================
 
+- <a href="#r-for-data-science-exploratory-data-analysis"
+  id="toc-r-for-data-science-exploratory-data-analysis">R for Data
+  Science: Exploratory Data Analysis</a>
+  - <a href="#edaとは" id="toc-edaとは">EDAとは</a>
+  - <a href="#問い" id="toc-問い">問い</a>
+  - <a href="#変動" id="toc-変動">変動</a>
+  - <a href="#分布の可視化から出てくる問い"
+    id="toc-分布の可視化から出てくる問い">分布の可視化から出てくる問い</a>
+  - <a href="#クラスター" id="toc-クラスター">クラスター</a>
+  - <a href="#外れ値異常値" id="toc-外れ値異常値">外れ値・異常値</a>
+  - <a href="#共変動" id="toc-共変動">共変動</a>
+
 ## [R for Data Science: Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html#exploratory-data-analysis)
 
 ### EDAとは

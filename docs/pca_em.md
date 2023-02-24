@@ -1,4 +1,3 @@
-
 <a href="https://colab.research.google.com/github/savioursho/data-analysis/blob/main/pca_em.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ``` python

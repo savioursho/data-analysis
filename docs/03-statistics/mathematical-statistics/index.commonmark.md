@@ -1,6 +1,89 @@
 数理統計学
 ================
 
+- <a href="#分布概要" id="toc-分布概要"><span
+  class="toc-section-number">1</span> 分布概要</a>
+  - <a href="#離散型分布" id="toc-離散型分布">— 離散型分布 —</a>
+  - <a href="#項分布" id="toc-項分布"><span
+    class="toc-section-number">1.1</span> 2項分布</a>
+  - <a href="#ポアソン分布" id="toc-ポアソン分布"><span
+    class="toc-section-number">1.2</span> ポアソン分布</a>
+  - <a href="#幾何分布" id="toc-幾何分布"><span
+    class="toc-section-number">1.3</span> 幾何分布</a>
+  - <a href="#負の2項分布" id="toc-負の2項分布"><span
+    class="toc-section-number">1.4</span> 負の2項分布</a>
+  - <a href="#超幾何分布" id="toc-超幾何分布"><span
+    class="toc-section-number">1.5</span> 超幾何分布</a>
+  - <a href="#多項分布" id="toc-多項分布"><span
+    class="toc-section-number">1.6</span> 多項分布</a>
+  - <a href="#連続型分布" id="toc-連続型分布">— 連続型分布 —</a>
+  - <a href="#正規分布" id="toc-正規分布"><span
+    class="toc-section-number">1.7</span> 正規分布</a>
+  - <a href="#多変量正規分布" id="toc-多変量正規分布"><span
+    class="toc-section-number">1.8</span> 多変量正規分布</a>
+  - <a href="#カイ2乗分布" id="toc-カイ2乗分布"><span
+    class="toc-section-number">1.9</span> カイ2乗分布</a>
+  - <a href="#f-分布" id="toc-f-分布"><span
+    class="toc-section-number">1.10</span> <span
+    class="math inline"><em>F</em></span> 分布</a>
+  - <a href="#t-分布" id="toc-t-分布"><span
+    class="toc-section-number">1.11</span> <span
+    class="math inline"><em>t</em></span> 分布</a>
+  - <a href="#指数分布" id="toc-指数分布"><span
+    class="toc-section-number">1.12</span> 指数分布</a>
+  - <a href="#ガンマ分布" id="toc-ガンマ分布"><span
+    class="toc-section-number">1.13</span> ガンマ分布</a>
+  - <a href="#ベータ分布" id="toc-ベータ分布"><span
+    class="toc-section-number">1.14</span> ベータ分布</a>
+- <a href="#分布の間の関係" id="toc-分布の間の関係"><span
+  class="toc-section-number">2</span> 分布の間の関係</a>
+  - <a href="#ガンマ分布とカイ2乗分布"
+    id="toc-ガンマ分布とカイ2乗分布"><span
+    class="toc-section-number">2.1</span> ガンマ分布とカイ2乗分布</a>
+  - <a href="#ガンマ分布と指数分布" id="toc-ガンマ分布と指数分布"><span
+    class="toc-section-number">2.2</span> ガンマ分布と指数分布</a>
+  - <a href="#ガンマ分布と負の二項分布"
+    id="toc-ガンマ分布と負の二項分布"><span
+    class="toc-section-number">2.3</span> ガンマ分布と負の二項分布</a>
+  - <a href="#二項分布とポアソン分布" id="toc-二項分布とポアソン分布"><span
+    class="toc-section-number">2.4</span> 二項分布とポアソン分布</a>
+  - <a href="#指数分布とポアソン分布" id="toc-指数分布とポアソン分布"><span
+    class="toc-section-number">2.5</span> 指数分布とポアソン分布</a>
+  - <a href="#指数分布と幾何分布" id="toc-指数分布と幾何分布"><span
+    class="toc-section-number">2.6</span> 指数分布と幾何分布</a>
+- <a href="#十分統計量" id="toc-十分統計量"><span
+  class="toc-section-number">3</span> 十分統計量</a>
+  - <a href="#概要" id="toc-概要"><span
+    class="toc-section-number">3.1</span> 概要</a>
+  - <a href="#ポアソン分布-1" id="toc-ポアソン分布-1"><span
+    class="toc-section-number">3.2</span> ポアソン分布</a>
+  - <a href="#正規分布-1" id="toc-正規分布-1"><span
+    class="toc-section-number">3.3</span> 正規分布</a>
+  - <a href="#一様分布" id="toc-一様分布"><span
+    class="toc-section-number">3.4</span> 一様分布</a>
+- <a href="#不偏推定量" id="toc-不偏推定量"><span
+  class="toc-section-number">4</span> 不偏推定量</a>
+  - <a href="#概要-1" id="toc-概要-1"><span
+    class="toc-section-number">4.1</span> 概要</a>
+- <a href="#最尤推定量" id="toc-最尤推定量"><span
+  class="toc-section-number">5</span> 最尤推定量</a>
+  - <a href="#多項分布-1" id="toc-多項分布-1"><span
+    class="toc-section-number">5.1</span> 多項分布</a>
+- <a href="#正規分布に関する検定" id="toc-正規分布に関する検定"><span
+  class="toc-section-number">6</span> 正規分布に関する検定</a>
+  - <a href="#sec:2samples_mean_test_unknown_variance"
+    id="toc-sec:2samples_mean_test_unknown_variance"><span
+    class="toc-section-number">6.1</span>
+    2標本の平均の検定（分散が未知の場合）</a>
+  - <a href="#元配置分散分析" id="toc-元配置分散分析"><span
+    class="toc-section-number">6.2</span> 1元配置分散分析</a>
+- <a href="#デルタ法" id="toc-デルタ法"><span
+  class="toc-section-number">7</span> デルタ法</a>
+- <a href="#指数分布族" id="toc-指数分布族"><span
+  class="toc-section-number">8</span> 指数分布族</a>
+- <a href="#生存時間解析" id="toc-生存時間解析"><span
+  class="toc-section-number">9</span> 生存時間解析</a>
+
 ## 分布概要
 
 $$
@@ -87,11 +170,11 @@ id="eq-geometric_distribution_memorylessness">$$
 <div class="proof">
 
 <span
-class="proof-title">*Proof* (無記憶性を持つことの証明). </span>まず、$P(X \geq x_0)$
+class="proof-title">*証明* (無記憶性を持つことの証明). </span>まず、$P(X \geq x_0)$
 を計算する。無限級数の公式より $$
 P(X \geq x_0) = \sum_{x = x_0}^{\infty} p(1-p)^{x}
 = \frac{p(1 - p)^{x_0}}{1 - (1 - p)} = (1 - p)^{x_0}
-$$ となる。 次に [Equation 1](#eq-geometric_distribution_memorylessness)
+$$ となる。 次に [式 1](#eq-geometric_distribution_memorylessness)
 を確かめる。 [^1]
 
 <span id="eq-geometric_distribution_memorylessness_proof">$$
@@ -109,9 +192,8 @@ $$ となる。 次に [Equation 1](#eq-geometric_distribution_memorylessness)
 <div class="proof">
 
 <span
-class="proof-title">*Proof* (非負整数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が幾何分布であることの証明). </span>十分性は上で示したので、必要性を示す。
-[Equation 1](#eq-geometric_distribution_memorylessness) が成立するとき、
-$$
+class="proof-title">*証明* (非負整数上の確率分布が無記憶性を持つことの必要十分条件はその確率分布が幾何分布であることの証明). </span>十分性は上で示したので、必要性を示す。
+[式 1](#eq-geometric_distribution_memorylessness) が成立するとき、 $$
 P(X = x + x_0) = P(X \geq x_0) P(X = x)
 $$ となり、とくに $x_0 = 1$ のとき $$
 \begin{aligned}
@@ -974,8 +1056,7 @@ $$f (x, \theta) = h(x) \exp \qty ( \sum_{j=1}^{k} T_j(x)\psi_{j}(\theta) - c(\th
     $A = \{\xi | \xi = x + x_0\}, B = \{\xi | x \geq x_0\}$ とすると
     $A \subset B$であるので、$A \cap B = A$ つまり
     $P(X = x + x_0, X \geq x_0) = P(X = x + x_0)$ となり
-    [Equation 2](#eq-geometric_distribution_memorylessness_proof)
-    のようになる
+    [式 2](#eq-geometric_distribution_memorylessness_proof) のようになる
 
 [^2]: 言葉で表すと、$$十分統計量で条件付けた推定量の二乗誤差 \leq 元の推定量の二乗誤差$$となる。
     つまり、十分統計量で条件付けると、推定量の二乗誤差は小さくなる。

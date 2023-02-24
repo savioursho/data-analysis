@@ -1,4 +1,6 @@
 
+- <a href="#user-guide" id="toc-user-guide">User Guide</a>
+
 # User Guide
 
 [Introduction - Polars - User

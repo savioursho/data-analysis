@@ -1,4 +1,14 @@
 
+- <a href="#特徴量エンジニアリング"
+  id="toc-特徴量エンジニアリング">特徴量エンジニアリング</a>
+  - <a href="#数値特徴量の和と差"
+    id="toc-数値特徴量の和と差">数値特徴量の和と差</a>
+    - <a href="#境界が-y--x-のとき" id="toc-境界が-y--x-のとき">境界が <span
+      class="math inline"><em>y</em> =  − <em>x</em></span> のとき</a>
+    - <a href="#境界が-y-2-sin-x-のとき"
+      id="toc-境界が-y-2-sin-x-のとき">境界が <span
+      class="math inline"><em>y</em> = 2sin (<em>x</em>)</span> のとき</a>
+
 # 特徴量エンジニアリング
 
 ``` python
@@ -134,7 +144,7 @@ u8
 可視化
 
 <details>
-<summary>Code</summary>
+<summary>コード</summary>
 
 ``` python
 sns.relplot(
@@ -151,8 +161,8 @@ sns.relplot(
 
 <figure>
 <img src="index_files/figure-commonmark/fig-1-output-1.png" id="fig-1"
-alt="Figure 1: y = -x を境に正解のクラスが変わるデータ。境界が軸に対して斜めであるため、決定木では深さが必要となる。" />
-<figcaption aria-hidden="true">Figure 1: <span
+alt="図 1: y = -x を境に正解のクラスが変わるデータ。境界が軸に対して斜めであるため、決定木では深さが必要となる。" />
+<figcaption aria-hidden="true">図 1: <span
 class="math inline"><em>y</em> =  − <em>x</em></span>
 を境に正解のクラスが変わるデータ。境界が軸に対して斜めであるため、決定木では深さが必要となる。</figcaption>
 </figure>
@@ -169,7 +179,7 @@ df = df.with_columns([
 可視化
 
 <details>
-<summary>Code</summary>
+<summary>コード</summary>
 
 ``` python
 sns.relplot(
@@ -187,8 +197,8 @@ sns.relplot(
 
 <figure>
 <img src="index_files/figure-commonmark/fig-2-output-1.png" id="fig-2"
-alt="Figure 2: 左は縦軸をX+Yにしたもの。右は縦軸をX=Yにしたもの。和 X+Y と元の変数 X の2次元では、境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。差X=Y とXの2次元では、境界が軸に沿っていないので、決定木の深さが必要となる。" />
-<figcaption aria-hidden="true">Figure 2:
+alt="図 2: 左は縦軸をX+Yにしたもの。右は縦軸をX=Yにしたもの。和 X+Y と元の変数 X の2次元では、境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。差X=Y とXの2次元では、境界が軸に沿っていないので、決定木の深さが必要となる。" />
+<figcaption aria-hidden="true">図 2:
 左は縦軸を<code>X+Y</code>にしたもの。右は縦軸を<code>X=Y</code>にしたもの。和
 <code>X+Y</code> と元の変数 <code>X</code>
 の2次元では、境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。差<code>X=Y</code>
@@ -196,7 +206,7 @@ alt="Figure 2: 左は縦軸をX+Yにしたもの。右は縦軸をX=Yにした�
 </figure>
 
 <details>
-<summary>Code</summary>
+<summary>コード</summary>
 
 ``` python
 sns.relplot(
@@ -213,8 +223,8 @@ sns.relplot(
 
 <figure>
 <img src="index_files/figure-commonmark/fig-3-output-1.png" id="fig-3"
-alt="Figure 3: X+Y と X-Y の2次元では元の X と Y のデータを回転（と定数倍）した形になる。境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。" />
-<figcaption aria-hidden="true">Figure 3: <code>X+Y</code> と
+alt="図 3: X+Y と X-Y の2次元では元の X と Y のデータを回転（と定数倍）した形になる。境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。" />
+<figcaption aria-hidden="true">図 3: <code>X+Y</code> と
 <code>X-Y</code> の2次元では元の <code>X</code> と <code>Y</code>
 のデータを回転（と定数倍）した形になる。境界が軸に沿っているので、深さ1の決定木でほぼ分離できる。</figcaption>
 </figure>
@@ -339,7 +349,7 @@ u8
 可視化
 
 <details>
-<summary>Code</summary>
+<summary>コード</summary>
 
 ``` python
 sns.relplot(
@@ -356,8 +366,8 @@ sns.relplot(
 
 <figure>
 <img src="index_files/figure-commonmark/fig-4-output-1.png" id="fig-4"
-alt="Figure 4: y = 2 \sin(x) を境に正解のクラスが変わるデータ。" />
-<figcaption aria-hidden="true">Figure 4: <span
+alt="図 4: y = 2 \sin(x) を境に正解のクラスが変わるデータ。" />
+<figcaption aria-hidden="true">図 4: <span
 class="math inline"><em>y</em> = 2sin (<em>x</em>)</span>
 を境に正解のクラスが変わるデータ。</figcaption>
 </figure>
@@ -490,7 +500,7 @@ f64
 </table>
 </div>
 <details>
-<summary>Code</summary>
+<summary>コード</summary>
 
 ``` python
 sns.relplot(
@@ -507,8 +517,8 @@ sns.relplot(
 
 <figure>
 <img src="index_files/figure-commonmark/fig-5-output-1.png" id="fig-5"
-alt="Figure 5: z = y - 2 \sin(x) を特徴量として作成することで、境界が軸に沿うようになった。" />
-<figcaption aria-hidden="true">Figure 5: <span
+alt="図 5: z = y - 2 \sin(x) を特徴量として作成することで、境界が軸に沿うようになった。" />
+<figcaption aria-hidden="true">図 5: <span
 class="math inline"><em>z</em> = <em>y</em> − 2sin (<em>x</em>)</span>
 を特徴量として作成することで、境界が軸に沿うようになった。</figcaption>
 </figure>

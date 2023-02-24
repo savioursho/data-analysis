@@ -1,4 +1,20 @@
 
+- <a href="#getting-started" id="toc-getting-started">Getting started</a>
+  - <a href="#installation" id="toc-installation">Installation</a>
+  - <a href="#quick-start" id="toc-quick-start">Quick start</a>
+  - <a href="#lazy-quick-start" id="toc-lazy-quick-start">Lazy quick
+    start</a>
+  - <a href="#polars-quick-exploration-guide"
+    id="toc-polars-quick-exploration-guide">Polars quick exploration
+    guide</a>
+    - <a href="#installation-and-import"
+      id="toc-installation-and-import">Installation and Import</a>
+    - <a href="#object-creation" id="toc-object-creation">Object creation</a>
+    - <a href="#viewing-data" id="toc-viewing-data">Viewing data</a>
+    - <a href="#expressions" id="toc-expressions">Expressions</a>
+    - <a href="#combining-dataframes" id="toc-combining-dataframes">Combining
+      dataframes</a>
+
 # Getting started
 
 [Getting started - Polars - User

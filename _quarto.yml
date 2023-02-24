@@ -24,6 +24,9 @@ format:
     from: markdown+emoji
   gfm: 
     variant: "+emoji"
+    toc: true
+    lang: ja
+
 
 execute: 
   cache: true

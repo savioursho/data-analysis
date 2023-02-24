@@ -1,4 +1,13 @@
 
+- <a href="#seriation" id="toc-seriation">Seriation</a>
+  - <a href="#インポート" id="toc-インポート">インポート</a>
+  - <a href="#下三角行列-ノイズ-の行列をシャッフルしたデータフレーム"
+    id="toc-下三角行列-ノイズ-の行列をシャッフルしたデータフレーム">下三角行列
+    + ノイズ の行・列をシャッフルしたデータフレーム</a>
+  - <a href="#diamonds" id="toc-diamonds">diamonds</a>
+  - <a href="#iris" id="toc-iris">iris</a>
+  - <a href="#tips" id="toc-tips">tips</a>
+
 # Seriation
 
 ## インポート

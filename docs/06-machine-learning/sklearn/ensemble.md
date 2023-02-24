@@ -1,4 +1,9 @@
 
+- <a href="#sklearn.ensemble"
+  id="toc-sklearn.ensemble">sklearn.ensemble</a>
+  - <a href="#sklearn.ensemble.stackingregressor"
+    id="toc-sklearn.ensemble.stackingregressor">sklearn.ensemble.StackingRegressor</a>
+
 # sklearn.ensemble
 
 [sklearn.ensemble](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble)
