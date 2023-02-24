@@ -5,6 +5,7 @@ project:
 website: 
   title: "データ分析情報まとめ"
   favicon: favicon_io/favicon.ico
+  page-navigation: true
   navbar: 
     left: 
       - href: index.md
