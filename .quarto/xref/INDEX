@@ -34,19 +34,23 @@
     "index.html": "763f175e"
   },
   "01-EDA/index.qmd": {
-    "index.html": "888be302"
+    "index.html": "888be302",
+    "index.md": "944f19a9"
   },
   "01-EDA/R-for-data-science.qmd": {
-    "R-for-data-science.html": "8543412d"
+    "R-for-data-science.html": "8543412d",
+    "R-for-data-science.md": "8f5d203e"
   },
   "01-EDA/seriation/seriation.ipynb": {
-    "seriation.html": "dce0e7d5"
+    "seriation.html": "dce0e7d5",
+    "seriation.md": "fa62d1c8"
   },
   "02-probrem-solving/index.qmd": {
     "index.html": "22a173d6"
   },
   "index.md": {
-    "index.html": "25cb98f4"
+    "index.html": "25cb98f4",
+    "index.commonmark.md": "131b5b78"
   },
   "02-probrem-solving/professional-problem-solving-skills-and-techniques.qmd": {
     "professional-problem-solving-skills-and-techniques.html": "c87d7e59"
@@ -67,25 +71,31 @@
     "imdex.html": "44b9f93a"
   },
   "03-statistics/regression-analysis/index.qmd": {
-    "index.html": "5a5181da"
+    "index.html": "5a5181da",
+    "index.md": "aba39db2"
   },
   "03-statistics/index.qmd": {
-    "index.html": "29f3e7de"
+    "index.html": "29f3e7de",
+    "index.md": "580c44a0"
   },
   "03-statistics/causal-inference/index.qmd": {
-    "index.html": "c7969f6d"
+    "index.html": "c7969f6d",
+    "index.md": "8cd82280"
   },
   "03-statistics/regression-analysis/heteroskedasticity.qmd": {
-    "heteroskedasticity.html": "2ff4fda4"
+    "heteroskedasticity.html": "2ff4fda4",
+    "heteroskedasticity.md": "8796d003"
   },
   "03-statistics/mathematical-statistics/index.md": {
-    "index.html": "a29ad45e"
+    "index.html": "a29ad45e",
+    "index.commonmark.md": "972500ee"
   },
   "03-statistics/mathematical-statistics/index.qmd": {
     "index.html": "41284068"
   },
   "04-kaggle/index.qmd": {
-    "index.html": "0e6b7fed"
+    "index.html": "0e6b7fed",
+    "index.md": "f17a1701"
   },
   "05-modeling/all-analytical-models/index.qmd": {
     "index.html": "4379c47c"
@@ -97,33 +107,47 @@
     "index.html": "4d6340b0"
   },
   "06-machine-learning/index.qmd": {
-    "index.html": "1ba5778d"
+    "index.html": "1ba5778d",
+    "index.md": "364f61ac"
   },
   "06-machine-learning/sklearn/index.qmd": {
-    "index.html": "3d9e9163"
+    "index.html": "3d9e9163",
+    "index.md": "bc819795"
   },
   "06-machine-learning/sklearn/utils.qmd": {
-    "utils.html": "fbe649b5"
+    "utils.html": "fbe649b5",
+    "utils.md": "c3ef5397"
   },
   "06-machine-learning/LightGBM/index.qmd": {
-    "index.html": "1bade533"
+    "index.html": "1bade533",
+    "index.md": "e76a6452"
   },
   "06-machine-learning/sklearn/ensemble.qmd": {
-    "ensemble.html": "7eef0c50"
+    "ensemble.html": "7eef0c50",
+    "ensemble.md": "f748307b"
   },
   "07-data-handling/index.qmd": {
-    "index.html": "7e05bbd0"
+    "index.html": "7e05bbd0",
+    "index.md": "a762629b"
   },
   "07-data-handling/polars/index.qmd": {
-    "index.html": "5398299d"
+    "index.html": "5398299d",
+    "index.md": "17d51f4a"
   },
   "07-data-handling/polars/user-guide/index.qmd": {
-    "index.html": "0975bce6"
+    "index.html": "0975bce6",
+    "index.md": "2d597f1b"
   },
   "07-data-handling/polars/user-guide/getting-startied.qmd": {
-    "getting-startied.html": "55e38495"
+    "getting-startied.html": "55e38495",
+    "getting-startied.md": "5892de98"
   },
   "06-machine-learning/feature-engineering/index.qmd": {
-    "index.html": "91f152e0"
+    "index.html": "91f152e0",
+    "index.md": "f0f1aabd"
+  },
+  "pca_em.ipynb": {
+    "pca_em.html": "e4e15cda",
+    "pca_em.md": "4dfac93f"
   }
 }

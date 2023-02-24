@@ -1,0 +1,14 @@
+
+# sklearn.ensemble
+
+[sklearn.ensemble](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble)
+
+## [sklearn.ensemble.StackingRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.StackingRegressor.html)
+
+- 学習時
+  - `estimators`は[`cross_val_predict`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_predict.html)でfold毎にモデルを学習して予測値を算出する
+  - 推論時のために、全データでモデルを再学習し、`estimators_`に格納
+- 推論時
+  - `predict`を使うと、全データを使って再学習したモデルでの予測値が算出される
+  - `transform`を使うと、`final_estimator`
+    に入れる、各モデルの予測値が得られる
